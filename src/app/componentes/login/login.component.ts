@@ -25,9 +25,12 @@ export class LoginComponent implements OnInit {
       if(res.msg != undefined){
         this.dialog.open(AlertaComponent,{data:{title:"Error",msg:res.msg}})
         localStorage.removeItem("token");
+        localStorage.removeItem("jugador");
+        
       } 
       else{
-        this.jugador = res.jugador;
+        localStorage.setItem("jugador",JSON.stringify(res.jugador));
+        
         localStorage.setItem("token",res.token);
         this.router.navigate(['juegos']);
       }

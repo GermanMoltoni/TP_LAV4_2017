@@ -36,6 +36,7 @@ import { JuegosComponent } from './componentes/juegos/juegos.component';
 import { MenuJuegosComponent } from './componentes/menu-juegos/menu-juegos.component';
 import { RecoverPasswordComponent } from './componentes/recover-password/recover-password.component';
 import { AlertaComponent } from './componentes/alerta/alerta.component';
+import { SimonDiceComponent } from './componentes/simon-dice/simon-dice.component';
 
 //------------------------------------------
 
@@ -57,7 +58,8 @@ import { AlertaComponent } from './componentes/alerta/alerta.component';
     JuegosComponent,
     MenuJuegosComponent,
     RecoverPasswordComponent,
-    AlertaComponent
+    AlertaComponent,
+    SimonDiceComponent
   ],
   imports: [
     BrowserModule,FormsModule,RutasModule,ReactiveFormsModule,HttpModule,MatInputModule,BrowserAnimationsModule,MatDialogModule
