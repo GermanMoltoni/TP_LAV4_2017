@@ -5,13 +5,15 @@ export class Jugador {
     public fecha:string;
     public sexo:string;
     public gano:boolean;
-    constructor(usuario:string,email:string,puntaje:number,fecha:string,sexo:string,gano:boolean){
+    public password:string;
+    constructor(usuario:string,email:string,sexo:string,password?:string,puntaje?:number,fecha?:string,gano?:boolean){
         this.usuario=usuario;
         this.email=email;
         this.puntaje=puntaje;
         this.fecha=fecha;
         this.sexo=sexo;
         this.gano=gano;   
+        this.password=password;   
     }
 
 }
