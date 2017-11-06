@@ -16,7 +16,7 @@ import { RutasModule } from './modulos/rutas/rutas.module';
 import {HttpModule} from '@angular/http';
 import { RouterModule,Routes }   from '@angular/router';//rutas
 import { FormsModule,ReactiveFormsModule}   from '@angular/forms';
-import {MatInputModule,MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatInputModule,MatButtonModule, MatCheckboxModule,MatDialogModule} from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Componentes
@@ -27,7 +27,7 @@ import { AgilidadAritmeticaComponent } from './componentes/agilidad-aritmetica/a
 import { ListadoJugadoresComponent } from './componentes/listado-jugadores/listado-jugadores.component';
 import { ListadoResultadosComponent } from './componentes/listado-resultados/listado-resultados.component';
 import { AdivinaElNumeroComponent } from './componentes/adivina-el-numero/adivina-el-numero.component';
-import { LoginComponent } from './componentes/login/login.component';
+import { LoginComponent} from './componentes/login/login.component';
 import { RegistroJugadorComponent } from './componentes/registro-jugador/registro-jugador.component';
 import { AboutMeComponent } from './componentes/about-me/about-me.component';
 import { MenuPrincipalComponent } from './componentes/menu-principal/menu-principal.component';
@@ -35,7 +35,7 @@ import { PaginaPrincipalComponent } from './componentes/pagina-principal/pagina-
 import { JuegosComponent } from './componentes/juegos/juegos.component';
 import { MenuJuegosComponent } from './componentes/menu-juegos/menu-juegos.component';
 import { RecoverPasswordComponent } from './componentes/recover-password/recover-password.component';
-
+import { AlertaComponent } from './componentes/alerta/alerta.component';
 
 //------------------------------------------
 
@@ -56,12 +56,16 @@ import { RecoverPasswordComponent } from './componentes/recover-password/recover
     PaginaPrincipalComponent,
     JuegosComponent,
     MenuJuegosComponent,
-    RecoverPasswordComponent
+    RecoverPasswordComponent,
+    AlertaComponent
   ],
   imports: [
-    BrowserModule,FormsModule,RutasModule,ReactiveFormsModule,HttpModule,MatInputModule,BrowserAnimationsModule
+    BrowserModule,FormsModule,RutasModule,ReactiveFormsModule,HttpModule,MatInputModule,BrowserAnimationsModule,MatDialogModule
   ],
   providers: [MiHttpService,JugadoresService,JugadorService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // Entrada de datos
+  entryComponents: [AlertaComponent]
+  
 })
 export class AppModule { }

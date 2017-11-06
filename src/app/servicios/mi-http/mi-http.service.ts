@@ -9,7 +9,7 @@ export class MiHttpService{
     return this.http.get(path).map(this.ExtraerDatos);
   }
   Post(path:string,data:any){
-    return this.http.post(path,data,{headers:new Headers({'Content-Type': 'application/json'})}).subscribe(res=>console.log(res));
+    return this.http.post(path,data,{headers:new Headers({'Content-Type': 'application/json'})}).map(this.ExtraerDatos);
   }
   ManejadorDeError(error:Response|any){
     return error;

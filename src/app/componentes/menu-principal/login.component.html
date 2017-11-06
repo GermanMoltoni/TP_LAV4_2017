@@ -1,0 +1,42 @@
+
+<div class="section section-signin">
+    <p class="text-center"><a href="index.html"><img src="./assets/logo.png" alt="Progressus HTML5 template"></a></p>
+    <div class="panel panel-default">
+        <div class="panel-body" role="tabpanel">
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="do-signin">
+                    <h3 class="text-center">Ingresar</h3>
+                    <p class="text-center">
+                        <br><br>
+                    </p>
+                    <form class="form-signin">
+                        <div class="form-group">
+                            <label class="sr-only" >Username/Email <span class="text-danger">*</span></label>
+                            <input type="text" id="inputEmail" class="form-control" placeholder="Usuario" [(ngModel)]="usuario" [ngModelOptions]="{standalone: true}" required autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only">Password <span class="text-danger">*</span></label>
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required>
+                        </div>
+                        <div class="form-group">
+                                <label>
+                                        <input type="checkbox" value="remember-me"> Recordarme  
+                                    </label>
+                        </div>
+                        <div class="form-group">
+                                <button class="btn btn-block btn-action" type="submit" (click)="onClick()">Ingresar</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+            <div class="toggler text-center small list-unstyled">
+                    <p>No tenés una Cuenta? <a routerLink="/signup" >Registrate Ahora</a></p>
+                    <p><a routerLink="/recover">¿Olvidaste tu Clave?</a></p>
+                </div>
+        </div>
+    </div>
+</div>
+
+        
+
+ 
