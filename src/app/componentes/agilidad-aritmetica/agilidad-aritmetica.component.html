@@ -20,6 +20,6 @@ top: 0; left: 0; bottom: 0; right: 0;">
 <input  class="form-control" name='ingreso' type="text" [(ngModel)]='juego.nIngresado'/>
 </div>  
  <p [hidden]='!juego.gano'>Gano<br>{{juego.tiempo}}</p> 
-<button (click)='juego.GenerarNuevo()' >Nuevo</button>
-<button (click)='Verificar()' >Verificar</button>
+<button mat-raised-button (click)='juego.GenerarNuevo()' >Nuevo</button>
+<button mat-raised-button (click)='Verificar()' >Verificar</button>
 </div>
