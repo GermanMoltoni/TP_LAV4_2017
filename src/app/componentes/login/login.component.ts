@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
       } 
       else{
         localStorage.setItem("jugador",JSON.stringify(res.jugador));
-        
         localStorage.setItem("token",res.token);
         this.router.navigate(['juegos']);
       }

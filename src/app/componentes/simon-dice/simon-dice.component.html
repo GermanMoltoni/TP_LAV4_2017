@@ -1,15 +1,15 @@
 
 <div class="back">
-  <a class="pad shape1" (click)="VerificarJugada(1)">
+  <a class="pad shape1" [@padState]="pads[0]"  (click)="VerificarJugada(1)">
  
   </a>
-  <a class="pad shape2" (click)="VerificarJugada(2)">
+  <a class="pad shape2"  [@padState]="pads[1]" (click)="VerificarJugada(2)">
  
   </a>
-  <a class="pad shape3" (click)="VerificarJugada(3)">
+  <a class="pad shape3" [@padState]="pads[2]" (click)="VerificarJugada(3)">
   
   </a>
-  <a class="pad shape4" (click)="VerificarJugada(4)">
+  <a class="pad shape4" [@padState]="pads[3]" (click)="VerificarJugada(4)">
  
   </a>
   <div class="circle"></div>

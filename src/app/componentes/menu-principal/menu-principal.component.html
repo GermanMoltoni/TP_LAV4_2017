@@ -1,31 +1,33 @@
-
-<div class="navigation">
-  <header>
-      <div class="header-content">
-          <div class="logo"><a href="#"><img src="" alt="Sedna logo"></a></div>
-          <div class="header-nav">
-              <nav>
-                  
-                  <ul class="member-actions">
-                      <li><a routerLink="/login" class="login"><span><img src="./assets/32.png">Ingresar</span></a></li>
-                      <li><a routerLink="/signup" class="btn-white btn-small"><span><img src="./assets/registro.png">Registrarse</span></a></li>
-                  </ul>
-              </nav>
-          </div>
-          <div class="navicon">
-              <a class="nav-toggle" href="#"><span></span></a>
-          </div>
-      </div>
-  </header>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="hero-content text-center">
-                <h2>Sala de Juegos</h2>
-                <p class="intro">Germán Moltoni</p>
-                <a href="/about" class="btn btn-accent btn-large">¿Quién Soy?</a>
-            </div>
+ 
+<nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand text-danger" href="#">GMoltoni</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-collapsible">
+ 
+            <ul class="nav navbar-nav navbar-right">
+                <li><a routerLink="/login" class="login"><span><img src="./assets/32.png">Login</span></a></li>
+                <li><a routerLink="/signup" class="btn-white btn-small"><span><img src="./assets/registro.png">Registrarse</span></a></li>
+            </ul>
         </div>
     </div>
-</div>
+</nav>
+<section class=" principal container-fluid" >
+        <div class=" ">
+            <h1 class="text-center">Sala de Juegos</h1>
+            <h3 class="text-center lato animate slideInDown">Germán Moltoni</h3>
+            <p class="text-center">
+                <br>
+                <a href="#" class="btn a btn-round" data-toggle="modal" data-target="#myModal">¿Quién Soy?</a>
+            </p>
+        </div>
+
+    </section>
+ 

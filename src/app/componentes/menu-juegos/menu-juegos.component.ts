@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute,Router }   from '@angular/router';//rutas
 
 @Component({
   selector: 'app-menu-juegos',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuJuegosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
+  }
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['/']);
+    
   }
 
 }
