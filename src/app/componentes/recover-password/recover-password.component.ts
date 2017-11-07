@@ -7,11 +7,15 @@ import { ActivatedRoute,Router }   from '@angular/router';//rutas
   styleUrls: ['./recover-password.component.css']
 })
 export class RecoverPasswordComponent implements OnInit {
-
+public inputMail;
+public registroForm;
   constructor(private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit() {
+  }
+  onClick(){
+
   }
 
 }

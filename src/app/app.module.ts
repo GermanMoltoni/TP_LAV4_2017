@@ -16,7 +16,7 @@ import { RutasModule } from './modulos/rutas/rutas.module';
 import {HttpModule} from '@angular/http';
 import { RouterModule,Routes }   from '@angular/router';//rutas
 import { FormsModule,ReactiveFormsModule}   from '@angular/forms';
-import {MatInputModule,MatButtonModule, MatCheckboxModule,MatDialogModule} from '@angular/material';
+import {MatInputModule,MatButtonModule, MatCheckboxModule} from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Componentes
@@ -35,7 +35,6 @@ import { PaginaPrincipalComponent } from './componentes/pagina-principal/pagina-
 import { JuegosComponent } from './componentes/juegos/juegos.component';
 import { MenuJuegosComponent } from './componentes/menu-juegos/menu-juegos.component';
 import { RecoverPasswordComponent } from './componentes/recover-password/recover-password.component';
-import { AlertaComponent } from './componentes/alerta/alerta.component';
 import { SimonDiceComponent } from './componentes/simon-dice/simon-dice.component';
 
 //------------------------------------------
@@ -58,16 +57,14 @@ import { SimonDiceComponent } from './componentes/simon-dice/simon-dice.componen
     JuegosComponent,
     MenuJuegosComponent,
     RecoverPasswordComponent,
-    AlertaComponent,
     SimonDiceComponent
   ],
   imports: [
-    BrowserModule,FormsModule,RutasModule,ReactiveFormsModule,HttpModule,MatInputModule,BrowserAnimationsModule,MatDialogModule
+    BrowserModule,FormsModule,RutasModule,ReactiveFormsModule,HttpModule,MatInputModule,BrowserAnimationsModule
   ],
   providers: [MiHttpService,JugadoresService,JugadorService],
   bootstrap: [AppComponent],
   // Entrada de datos
-  entryComponents: [AlertaComponent]
-  
+   
 })
 export class AppModule { }
