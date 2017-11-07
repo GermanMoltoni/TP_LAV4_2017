@@ -1,3 +1,25 @@
-<div class="container" style="background-color:white; margin:100px 0">
-  agilidad-aritmetica works!
+<div style=" height: 50%;
+overflow: visible;
+margin: auto;
+position: absolute;
+top: 0; left: 0; bottom: 0; right: 0;">
+<h1 class="text-center">{{juego.nombre}}</h1>
+<div class="form-group col-md-3">
+<input  class="form-control" name='numUno' type="text" [ngModel]='juego.numUno'/>
+</div>
+<div class="form-group">
+  
+<input  class="form-control" name='oper' type="text" [ngModel]='juego.operador'/>
+</div>
+<div class="form-group">
+  
+<input  class="form-control" name='numDos' type="text" [(ngModel)]='juego.numDos'/>
+</div>  
+<div class="form-group">
+  
+<input  class="form-control" name='ingreso' type="text" [(ngModel)]='juego.nIngresado'/>
+</div>  
+ <p [hidden]='!juego.gano'>Gano<br>{{juego.tiempo}}</p> 
+<button (click)='juego.GenerarNuevo()' >Nuevo</button>
+<button (click)='Verificar()' >Verificar</button>
 </div>

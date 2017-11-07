@@ -1,3 +1,12 @@
-<p>
-  adivina-el-numero works!
-</p>
+<div class="v-center">
+<h1>{{juego.nombre}}</h1>
+<div class="row">
+<label for='num'>Numero Ingresado</label>
+<input  class="form-control" name='num' type="text" [(ngModel)]='juego.nIngresado'/>
+</div>
+ <p [hidden]='!juego.gano'>Gano</p> 
+ <div class="row">
+<button class="btn"(click)='GenerarNuevo()' >Nuevo</button>
+<button class="btn" (click)='Verificar()' >Verificar</button>
+</div>
+</div>

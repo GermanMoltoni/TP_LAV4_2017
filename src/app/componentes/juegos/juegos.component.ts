@@ -14,8 +14,8 @@ export class JuegosComponent implements OnInit {
 
   ngOnInit() {
     console.log()
-    if(localStorage.getItem('token') == null || localStorage.getItem("jugador") == null)
-      this.router.navigate(['/']);
+    //if(localStorage.getItem('token') == null || localStorage.getItem("jugador") == null)
+     // this.router.navigate(['/']);
   }
 
 }
