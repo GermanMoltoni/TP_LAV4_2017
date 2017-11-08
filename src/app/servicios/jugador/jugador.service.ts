@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Jugador} from '../../clases/jugador';
 import {MiHttpService} from '../mi-http/mi-http.service';
+import { Observable }     from 'rxjs/Observable'; 
 
 @Injectable()
 export class JugadorService {
@@ -15,4 +16,8 @@ export class JugadorService {
     return this.http.Post(this.url+path,data)
     
   }
+  TraerJugadores(path:string):Observable<Jugador[]>{
+    return this.http.Get(this.url+path) as Observable<Jugador[]>;
+  }
+ 
 }
