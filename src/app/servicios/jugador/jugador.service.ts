@@ -4,7 +4,7 @@ import {MiHttpService} from '../mi-http/mi-http.service';
 
 @Injectable()
 export class JugadorService {
-  private url:string ='http://germanmoltoni.esy.es/';
+  private url:string ='https://germanmoltoni.freecluster.eu/';
 
   constructor(private http:MiHttpService) { }
   Crear(path:string,jugador:Jugador){
