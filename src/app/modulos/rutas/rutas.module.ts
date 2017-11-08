@@ -20,14 +20,19 @@ import { PaginaPrincipalComponent } from '../../componentes/pagina-principal/pag
 import { JuegosComponent } from '../../componentes/juegos/juegos.component';
 import { MenuJuegosComponent } from '../../componentes/menu-juegos/menu-juegos.component';
 import { RecoverPasswordComponent } from '../../componentes/recover-password/recover-password.component';
+import { MenuCardComponent } from '../../componentes/menu-card/menu-card.component';
+import { SimonComponent } from '../../componentes/simon/simon.component'; 
 
 //------------------------------------------
 const routes: Routes = [
   {path:'juegos',component:JuegosComponent,
   children:[
+    {path:'',component:MenuCardComponent},
     {path:'adivina',component:AdivinaElNumeroComponent},
     {path:'agilidad',component:AgilidadAritmeticaComponent},
     {path:'piedrapapelotijera',component:PiedraPapelOtijeraComponent}, 
+    {path:'anagrama',component:AnagramaComponent},
+    {path:'simon',component:SimonComponent},
   ]},
  
   

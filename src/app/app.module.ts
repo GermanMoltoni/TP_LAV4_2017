@@ -37,6 +37,8 @@ import { MenuJuegosComponent } from './componentes/menu-juegos/menu-juegos.compo
 import { RecoverPasswordComponent } from './componentes/recover-password/recover-password.component';
 import { SimonDiceComponent } from './componentes/simon-dice/simon-dice.component';
 import { CabezeraComponent } from './componentes/cabezera/cabezera.component';
+import { MenuCardComponent } from './componentes/menu-card/menu-card.component';
+import { SimonComponent } from './componentes/simon/simon.component';
 
 //------------------------------------------
 
@@ -59,7 +61,9 @@ import { CabezeraComponent } from './componentes/cabezera/cabezera.component';
     MenuJuegosComponent,
     RecoverPasswordComponent,
     SimonDiceComponent,
-    CabezeraComponent
+    CabezeraComponent,
+    MenuCardComponent,
+    SimonComponent
   ],
   imports: [
     BrowserModule,FormsModule,RutasModule,ReactiveFormsModule,HttpModule,MatInputModule,BrowserAnimationsModule
