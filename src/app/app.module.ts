@@ -16,6 +16,7 @@ import {HttpModule} from '@angular/http';
 import { RouterModule,Routes }   from '@angular/router';//rutas
 import { FormsModule,ReactiveFormsModule}   from '@angular/forms';
 import {MatInputModule,MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Componentes
@@ -42,6 +43,7 @@ import { ResultadoPipe } from './pipes/resultado.pipe';
 import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/agilidad-mas-listado.component';
 import { JugadoresComponent } from './componentes/jugadores/jugadores.component';
 import { ResultadosComponent } from './componentes/resultados/resultados.component';
+import { SexoPipe } from './pipes/sexo/sexo.pipe';
  
 //------------------------------------------
 
@@ -71,10 +73,11 @@ import { ResultadosComponent } from './componentes/resultados/resultados.compone
     AgilidadMasListadoComponent,
     JugadoresComponent,
     ResultadosComponent,
+    SexoPipe,
  
   ],
   imports: [
-    BrowserModule,FormsModule,RutasModule,ReactiveFormsModule,HttpModule,MatInputModule,BrowserAnimationsModule
+    BrowserModule,Ng2SmartTableModule,FormsModule,RutasModule,ReactiveFormsModule,HttpModule,MatInputModule,BrowserAnimationsModule
   ],
   providers: [MiHttpService,JugadorService],
   bootstrap: [AppComponent],
