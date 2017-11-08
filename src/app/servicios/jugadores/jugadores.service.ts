@@ -5,7 +5,7 @@ import { MiHttpService} from '../mi-http/mi-http.service';
 
 @Injectable()
 export class JugadoresService {
- private url:string=  "http://localhost:8080/apirestjugadores/";
+ private url:string=  "http://germanmoltoni.esy.es/";
  constructor(private http : MiHttpService) { }
   public TraerJugadores(ruta:string){
      //return this.http.DameUnObservable(this.url+ruta) as Observable<Jugador[]>;
