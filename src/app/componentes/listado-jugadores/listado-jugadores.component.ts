@@ -43,5 +43,7 @@ export class ListadoJugadoresComponent implements OnInit {
     this.jugadores.subscribe(datos=>{this.data = new LocalDataSource(datos) });
     
   }
+ 
+  
 
 }

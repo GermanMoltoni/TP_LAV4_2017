@@ -44,6 +44,7 @@ import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/
 import { JugadoresComponent } from './componentes/jugadores/jugadores.component';
 import { ResultadosComponent } from './componentes/resultados/resultados.component';
 import { SexoPipe } from './pipes/sexo/sexo.pipe';
+import { FiltroJugadoresComponent } from './componentes/filtro-jugadores/filtro-jugadores.component';
  
 //------------------------------------------
 
@@ -74,6 +75,7 @@ import { SexoPipe } from './pipes/sexo/sexo.pipe';
     JugadoresComponent,
     ResultadosComponent,
     SexoPipe,
+    FiltroJugadoresComponent,
  
   ],
   imports: [
