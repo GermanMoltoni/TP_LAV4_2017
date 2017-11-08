@@ -22,13 +22,14 @@ import { MenuJuegosComponent } from '../../componentes/menu-juegos/menu-juegos.c
 import { RecoverPasswordComponent } from '../../componentes/recover-password/recover-password.component';
 import { MenuCardComponent } from '../../componentes/menu-card/menu-card.component';
 import { SimonDiceComponent } from '../../componentes/simon-dice/simon-dice.component'; 
+import { AdivinaMasListadoComponent } from '../../componentes/adivina-mas-listado/adivina-mas-listado.component';
 
 //------------------------------------------
 const routes: Routes = [
   {path:'juegos',component:JuegosComponent,
   children:[
     {path:'',component:MenuCardComponent},
-    {path:'adivina',component:AdivinaElNumeroComponent},
+    {path:'adivina',component:AdivinaMasListadoComponent},
     {path:'agilidad',component:AgilidadAritmeticaComponent},
     {path:'piedrapapelotijera',component:PiedraPapelOtijeraComponent}, 
     {path:'anagrama',component:AnagramaComponent},

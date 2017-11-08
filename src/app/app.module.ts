@@ -39,6 +39,7 @@ import { SimonDiceComponent } from './componentes/simon-dice/simon-dice.componen
 import { CabezeraComponent } from './componentes/cabezera/cabezera.component';
 import { MenuCardComponent } from './componentes/menu-card/menu-card.component';
 import { AdivinaMasListadoComponent } from './componentes/adivina-mas-listado/adivina-mas-listado.component';
+import { ResultadoPipe } from './pipes/resultado.pipe';
  
 //------------------------------------------
 
@@ -64,6 +65,7 @@ import { AdivinaMasListadoComponent } from './componentes/adivina-mas-listado/ad
     CabezeraComponent,
     MenuCardComponent,
     AdivinaMasListadoComponent,
+    ResultadoPipe,
  
   ],
   imports: [

@@ -6,13 +6,13 @@
             <th>Resultado</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody  style="background-color:white;">
       <tr *ngFor='let juego of listado'>
         <td>{{juego.nombre}}</td>
-                <td>{{juego.jugador}}</td>
+                <td>{{juego.jugador.usuario}}</td>
 
-        <td *ngIf='juego.gano else perdio'>Gano</td>
-        <ng-template #perdio><td>Perdio</td></ng-template>
+        <td>{{juego.gano | resultado}}</td>
+ 
       </tr>
     </tbody>
 
