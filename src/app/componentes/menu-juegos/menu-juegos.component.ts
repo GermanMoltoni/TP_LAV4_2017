@@ -8,8 +8,8 @@ import { ActivatedRoute,Router }   from '@angular/router';//rutas
 })
 export class MenuJuegosComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,
-    private router: Router) { }
+  constructor(public route: ActivatedRoute,
+    public router: Router) { }
 
   ngOnInit() {
   }

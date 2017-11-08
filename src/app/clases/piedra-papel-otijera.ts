@@ -3,7 +3,7 @@ import {Juego} from './juego';
 import {Jugador} from './jugador';
 
 export class PiedraPapelOTijera  extends Juego{
-    private maquina:number;
+    public maquina:number;
     public opcion:number;
     constructor(nombre:string,jugador:Jugador){
         super(nombre,jugador);

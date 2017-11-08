@@ -44,7 +44,7 @@ import { ChangeDetectorRef } from "@angular/core";
   ]
 })
 export class AdivinaElNumeroComponent implements OnInit {
-  private juego:AdivinaElNumero;
+  public juego:AdivinaElNumero;
   public nIngresado:number;
   public state;
   @Output() enviarJuego:EventEmitter<Juego> =new EventEmitter<Juego>();

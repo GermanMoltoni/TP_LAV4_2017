@@ -6,7 +6,7 @@ import {Juego} from '../../clases/juego'
   styleUrls: ['./listado-resultados.component.css']
 })
 export class ListadoResultadosComponent implements OnInit {
-  @Input() private listado:Juego[];// Pasa info de un componente a otro.
+  @Input() public listado:Juego[];// Pasa info de un componente a otro.
   constructor() { }
 
   ngOnInit() {

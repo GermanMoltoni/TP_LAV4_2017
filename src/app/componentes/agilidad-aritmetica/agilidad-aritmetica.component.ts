@@ -43,7 +43,7 @@ import { ChangeDetectorRef } from "@angular/core";
   ]
 })
 export class AgilidadAritmeticaComponent implements OnInit {
-  private juego : AgilidadAritmetica;
+  public juego : AgilidadAritmetica;
   public jugador:Jugador;
     @Output() enviarJuego:EventEmitter<Juego> =new EventEmitter<Juego>();
   public state;

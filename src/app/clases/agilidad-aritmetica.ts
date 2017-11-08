@@ -2,9 +2,9 @@ import {Juego} from './juego';
 import {Jugador} from './jugador';
 
 export class AgilidadAritmetica extends Juego{
-    private numUno:number;
-    private numDos:number;
-    private operador:string;
+    public numUno:number;
+    public numDos:number;
+    public operador:string;
     public nIngresado:number;
     public resultado:number;
     constructor(nombre:string,jugador:Jugador){

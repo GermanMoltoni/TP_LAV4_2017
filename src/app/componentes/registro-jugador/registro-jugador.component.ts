@@ -21,7 +21,7 @@ export class RegistroJugadorComponent implements OnInit {
     password:this.inputPassword,
     //sexo:this.radioSexo
   });
-  constructor(private builder:FormBuilder,private jugadorService: JugadorService) { }
+  constructor(public builder:FormBuilder,public jugadorService: JugadorService) { }
 
   ngOnInit() {
   }

@@ -13,8 +13,8 @@ export class LoginComponent implements OnInit {
     public password:string;
     public jugador:Jugador;
     public error:string;
-  constructor(private route: ActivatedRoute,
-    private router: Router,private jugadorHttp:JugadorService) { }
+  constructor(public route: ActivatedRoute,
+    public router: Router,public jugadorHttp:JugadorService) { }
 
   ngOnInit() {
   }
