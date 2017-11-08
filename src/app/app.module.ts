@@ -38,8 +38,8 @@ import { RecoverPasswordComponent } from './componentes/recover-password/recover
 import { SimonDiceComponent } from './componentes/simon-dice/simon-dice.component';
 import { CabezeraComponent } from './componentes/cabezera/cabezera.component';
 import { MenuCardComponent } from './componentes/menu-card/menu-card.component';
-import { SimonComponent } from './componentes/simon/simon.component';
-
+import { AdivinaMasListadoComponent } from './componentes/adivina-mas-listado/adivina-mas-listado.component';
+ 
 //------------------------------------------
 
 @NgModule({
@@ -63,7 +63,8 @@ import { SimonComponent } from './componentes/simon/simon.component';
     SimonDiceComponent,
     CabezeraComponent,
     MenuCardComponent,
-    SimonComponent
+    AdivinaMasListadoComponent,
+ 
   ],
   imports: [
     BrowserModule,FormsModule,RutasModule,ReactiveFormsModule,HttpModule,MatInputModule,BrowserAnimationsModule

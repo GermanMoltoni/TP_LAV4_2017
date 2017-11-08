@@ -21,7 +21,7 @@ import { JuegosComponent } from '../../componentes/juegos/juegos.component';
 import { MenuJuegosComponent } from '../../componentes/menu-juegos/menu-juegos.component';
 import { RecoverPasswordComponent } from '../../componentes/recover-password/recover-password.component';
 import { MenuCardComponent } from '../../componentes/menu-card/menu-card.component';
-import { SimonComponent } from '../../componentes/simon/simon.component'; 
+import { SimonDiceComponent } from '../../componentes/simon-dice/simon-dice.component'; 
 
 //------------------------------------------
 const routes: Routes = [
@@ -32,7 +32,7 @@ const routes: Routes = [
     {path:'agilidad',component:AgilidadAritmeticaComponent},
     {path:'piedrapapelotijera',component:PiedraPapelOtijeraComponent}, 
     {path:'anagrama',component:AnagramaComponent},
-    {path:'simon',component:SimonComponent},
+    {path:'simon',component:SimonDiceComponent},
   ]},
  
   

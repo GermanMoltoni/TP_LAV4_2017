@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SimonComponent } from './simon.component';
+import { AdivinaMasListadoComponent } from './adivina-mas-listado.component';
 
-describe('SimonComponent', () => {
-  let component: SimonComponent;
-  let fixture: ComponentFixture<SimonComponent>;
+describe('AdivinaMasListadoComponent', () => {
+  let component: AdivinaMasListadoComponent;
+  let fixture: ComponentFixture<AdivinaMasListadoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SimonComponent ]
+      declarations: [ AdivinaMasListadoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SimonComponent);
+    fixture = TestBed.createComponent(AdivinaMasListadoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -15,5 +15,10 @@ export class Jugador {
         this.gano=gano;   
         this.password=password;   
     }
-
+    static getJugador(){
+        let datos = JSON.parse(localStorage.getItem("jugador"));
+        if(datos != null)
+            return new Jugador(datos.usuario,datos.mail,datos.sexo);
+        return null;
+    }
 }

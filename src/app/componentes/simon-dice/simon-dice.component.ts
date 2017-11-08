@@ -32,11 +32,13 @@ export class SimonDiceComponent implements OnInit {
     
   }
   GenerarNuevo(){
-    let datos = JSON.parse(localStorage.getItem("jugador"));
-    let jugador = new Jugador(datos.usuario,datos.mail,datos.sexo);
-    this.juego = new Simon('Simon Dice',jugador);
-    this.juego.GenerarNuevo(); 
-    this.MostrarSecuencia();
+    let jugador = Jugador.getJugador();
+    if(jugador != null){
+      this.juego = new Simon('Simon Dice',jugador);
+      this.juego.GenerarNuevo(); 
+      this.MostrarSecuencia();
+    }
+    
   }
   VerificarJugada(idPad:number){
     this.flash(idPad);
