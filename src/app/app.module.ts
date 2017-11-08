@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 
 //------------------------------------------
 //Servicios
-import { JugadoresService } from './servicios/jugadores/jugadores.service';
 import { MiHttpService } from './servicios/mi-http/mi-http.service'; 
 import {JugadorService} from './servicios/jugador/jugador.service'; 
 
@@ -77,7 +76,7 @@ import { ResultadosComponent } from './componentes/resultados/resultados.compone
   imports: [
     BrowserModule,FormsModule,RutasModule,ReactiveFormsModule,HttpModule,MatInputModule,BrowserAnimationsModule
   ],
-  providers: [MiHttpService,JugadoresService,JugadorService],
+  providers: [MiHttpService,JugadorService],
   bootstrap: [AppComponent],
   // Entrada de datos
    
