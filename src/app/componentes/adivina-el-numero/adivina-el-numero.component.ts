@@ -61,11 +61,10 @@ export class AdivinaElNumeroComponent implements OnInit {
     this.juego.GenerarNuevo();
     this.state = ':enter';
     this.change.detectChanges();
+    console.log(this.juego)
   }
   Verificar(){
-    this.juego.gano = this.juego.Verificar();
-    if(this.juego.gano)
-      
+     this.juego.Verificar();
     this.enviarJuego.emit(this.juego);
   }
 

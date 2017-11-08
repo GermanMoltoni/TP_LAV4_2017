@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Juego} from '../../clases/juego';
 
 @Component({
   selector: 'app-agilidad-mas-listado',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agilidad-mas-listado.component.css']
 })
 export class AgilidadMasListadoComponent implements OnInit {
-
-  constructor() { }
+  listadoParaCompartir:Juego[];
+  
+  constructor() { 
+    this.listadoParaCompartir = new Array<Juego>();
+  }
 
   ngOnInit() {
+  }
+  capturaJuego(juego:Juego){
+    this.listadoParaCompartir.push(juego);
+  
   }
 
 }

@@ -11,6 +11,7 @@ export class AgilidadAritmetica extends Juego{
         super(nombre,jugador);
     }
     GenerarNuevo(){
+        this.gano=false;
         this.numUno = Math.round(Math.random()*100);
         this.numDos =  Math.round(Math.random()*100);
         switch (Math.floor(Math.random() * 3) + 1) {
@@ -36,7 +37,7 @@ export class AgilidadAritmetica extends Juego{
         this.tiempo=new Date();
     }
     Verificar(){
-        if(this.gano = (this.nIngresado == this.resultado))
-            this.tiempo =1;// (new Date().getTime() - this.tiempo.getTime());
+         this.gano = (this.nIngresado == this.resultado);
+            
     }
 }

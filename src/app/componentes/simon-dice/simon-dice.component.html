@@ -1,5 +1,13 @@
 
-<div class="back">
+ 
+ 
+ 
+                   
+  
+ 
+   <h1 style="margin:4% 0px 0px 32%;  color:aliceblue">Simon Dice</h1>
+<div class="back" style="margin:6% 0px 0px 30%; zoom: 0.5;
+-moz-transform: scale(0.5);" >
   <a class="pad shape1" [@padState]="pads[0]"  (click)="VerificarJugada(1)">
  
   </a>
@@ -12,8 +20,16 @@
   <a class="pad shape4" [@padState]="pads[3]" (click)="VerificarJugada(4)">
  
   </a>
-  <div class="circle"></div>
+  <div class="circle"> <button style="margin:42% 0px 0px 28%;"class="btn btn-lg" (click)="GenerarNuevo()">Comenzar</button></div>
 </div>
 
+ 
+ 
+ 
+ 
 
-<button (click)="GenerarNuevo()">Comenzar</button>
+
+ 
+
+
+ 
