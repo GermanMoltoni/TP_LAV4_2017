@@ -23,6 +23,7 @@ import { RecoverPasswordComponent } from '../../componentes/recover-password/rec
 import { MenuCardComponent } from '../../componentes/menu-card/menu-card.component';
 import { SimonDiceComponent } from '../../componentes/simon-dice/simon-dice.component'; 
 import { AdivinaMasListadoComponent } from '../../componentes/adivina-mas-listado/adivina-mas-listado.component';
+import { AgilidadMasListadoComponent } from '../../componentes/agilidad-mas-listado/agilidad-mas-listado.component';
 
 //------------------------------------------
 const routes: Routes = [
@@ -30,7 +31,7 @@ const routes: Routes = [
   children:[
     {path:'',component:MenuCardComponent},
     {path:'adivina',component:AdivinaMasListadoComponent},
-    {path:'agilidad',component:AgilidadAritmeticaComponent},
+    {path:'agilidad',component:AgilidadMasListadoComponent},
     {path:'piedrapapelotijera',component:PiedraPapelOtijeraComponent}, 
     {path:'anagrama',component:AnagramaComponent},
     {path:'simon',component:SimonDiceComponent},

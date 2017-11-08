@@ -64,7 +64,9 @@ export class AdivinaElNumeroComponent implements OnInit {
   }
   Verificar(){
     this.juego.gano = this.juego.Verificar();
-    this.enviarJuego.emit(this.juego);//Emite evento y envia un juego
+    if(this.juego.gano)
+      
+    this.enviarJuego.emit(this.juego);
   }
 
 }

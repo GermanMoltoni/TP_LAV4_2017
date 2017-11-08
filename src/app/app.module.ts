@@ -40,6 +40,7 @@ import { CabezeraComponent } from './componentes/cabezera/cabezera.component';
 import { MenuCardComponent } from './componentes/menu-card/menu-card.component';
 import { AdivinaMasListadoComponent } from './componentes/adivina-mas-listado/adivina-mas-listado.component';
 import { ResultadoPipe } from './pipes/resultado.pipe';
+import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/agilidad-mas-listado.component';
  
 //------------------------------------------
 
@@ -66,6 +67,7 @@ import { ResultadoPipe } from './pipes/resultado.pipe';
     MenuCardComponent,
     AdivinaMasListadoComponent,
     ResultadoPipe,
+    AgilidadMasListadoComponent,
  
   ],
   imports: [
