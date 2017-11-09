@@ -64,22 +64,27 @@ export class SimonDiceComponent implements OnInit {
     for (let i = 1; i <= 3; ++i) {
       
       
-      this.flash(arr[i])
-     
-       console.log(i+"\n") 
+      
+      let timer1 = TimerObservable.create(500);
+      this.subscription = timer1.subscribe(t => {
 
+        this.flash(arr[i]);
+        let timer1 = TimerObservable.create(500);
+        this.subscription1 = timer1.subscribe(t => {
+          this.flash(arr[i])
+
+        });
+      
     
-    }
+        
+    
+    });
 
 
 }
+  }
 flash(idPad){
-  let timer1 = TimerObservable.create(1000);
-  this.subscription = timer1.subscribe(t => {
-    this.toggleMove(idPad)});
-  let timer = TimerObservable.create(500);
-  this.subscription1 = timer.subscribe(t => {
-    this.toggleMove(idPad)});
+    this.toggleMove(idPad);
 }
 toggleMove(idPad) {
   this.pads[idPad-1]  = (this.pads[idPad-1]  === 'inactive' ? 'active' : 'inactive');
