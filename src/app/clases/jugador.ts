@@ -1,14 +1,14 @@
 export class Jugador {
     public usuario:string;
-    public email:string;
+    public mail:string;
     public puntaje:number;
     public fecha:string;
     public sexo:string;
     public gano:boolean;
     public password:string;
-    constructor(usuario:string,email:string,sexo:string,password?:string,puntaje?:number,fecha?:string,gano?:boolean){
+    constructor(usuario:string,mail:string,sexo:string,password?:string,puntaje?:number,fecha?:string,gano?:boolean){
         this.usuario=usuario;
-        this.email=email;
+        this.mail=mail;
         this.puntaje=puntaje;
         this.fecha=fecha;
         this.sexo=sexo;

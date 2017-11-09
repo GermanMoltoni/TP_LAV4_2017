@@ -3,6 +3,8 @@ import {Simon} from '../../clases/simon';
 import {Jugador} from '../../clases/jugador'
 import {trigger,state,style,animate,transition} from '@angular/animations';
 import {Observable} from 'rxjs/Observable'
+import {TimerObservable} from "rxjs/observable/TimerObservable";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-simon-dice',
@@ -27,7 +29,9 @@ export class SimonDiceComponent implements OnInit {
   public juego:Simon;
   public pads:any[] = [];
   constructor() { }
-
+  private subscription: Subscription;
+  private subscription1: Subscription;
+  
   ngOnInit() {
     
   }
@@ -56,14 +60,28 @@ export class SimonDiceComponent implements OnInit {
   }
   MostrarSecuencia(){
     let arr = [1,2,4];
+   
     for (let i = 1; i <= 3; ++i) {
+      
+      
       this.flash(arr[i])
-      setTimeout(()=>{console.log(123)},500);
+     
+       console.log(i+"\n") 
+
+    
     }
+
 
 }
 flash(idPad){
-  this.pads[idPad-1] =  this.pads[idPad-1]  === 'active' ? 'inactive' : 'active';
-  setTimeout(()=>{this.pads[idPad-1] =  this.pads[idPad-1]  === 'active' ? 'inactive' : 'active'},200);
+  let timer1 = TimerObservable.create(1000);
+  this.subscription = timer1.subscribe(t => {
+    this.toggleMove(idPad)});
+  let timer = TimerObservable.create(500);
+  this.subscription1 = timer.subscribe(t => {
+    this.toggleMove(idPad)});
+}
+toggleMove(idPad) {
+  this.pads[idPad-1]  = (this.pads[idPad-1]  === 'inactive' ? 'active' : 'inactive');
 }
 }

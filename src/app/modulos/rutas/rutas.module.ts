@@ -25,8 +25,7 @@ import { SimonDiceComponent } from '../../componentes/simon-dice/simon-dice.comp
 import { AdivinaMasListadoComponent } from '../../componentes/adivina-mas-listado/adivina-mas-listado.component';
 import { AgilidadMasListadoComponent } from '../../componentes/agilidad-mas-listado/agilidad-mas-listado.component';
 import { JugadoresComponent } from '../../componentes/jugadores/jugadores.component';
-import { ResultadosComponent } from '../../componentes/resultados/resultados.component';
-//------------------------------------------
+ //------------------------------------------
 const routes: Routes = [
   {path:'juegos',component:JuegosComponent,
   children:[
@@ -36,9 +35,9 @@ const routes: Routes = [
     {path:'piedrapapelotijera',component:PiedraPapelOtijeraComponent}, 
     {path:'anagrama',component:AnagramaComponent},
     {path:'simon',component:SimonDiceComponent},
-    {path:'resultados',component:ResultadosComponent},
-    {path:'jugadores',component:JugadoresComponent},
+     
   ]},
+  {path:'jugadores',component:JugadoresComponent},
   {path:'',component:PaginaPrincipalComponent},
   {path:'about',component:AboutMeComponent},
   {path:'login',component:LoginComponent},

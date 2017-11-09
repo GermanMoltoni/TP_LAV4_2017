@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 //Servicios
 import { MiHttpService } from './servicios/mi-http/mi-http.service'; 
 import {JugadorService} from './servicios/jugador/jugador.service'; 
+import {FiltradoJugadoresService} from './servicios/filtrado-jugadores/filtrado-jugadores.service'
 
 //Modulos Propios
 import { RutasModule } from './modulos/rutas/rutas.module';
@@ -42,10 +43,8 @@ import { AdivinaMasListadoComponent } from './componentes/adivina-mas-listado/ad
 import { ResultadoPipe } from './pipes/resultado.pipe';
 import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/agilidad-mas-listado.component';
 import { JugadoresComponent } from './componentes/jugadores/jugadores.component';
-import { ResultadosComponent } from './componentes/resultados/resultados.component';
-import { SexoPipe } from './pipes/sexo/sexo.pipe';
-import { FiltroJugadoresComponent } from './componentes/filtro-jugadores/filtro-jugadores.component';
- 
+ import { SexoPipe } from './pipes/sexo/sexo.pipe';
+  
 //------------------------------------------
 
 @NgModule({
@@ -73,15 +72,13 @@ import { FiltroJugadoresComponent } from './componentes/filtro-jugadores/filtro-
     ResultadoPipe,
     AgilidadMasListadoComponent,
     JugadoresComponent,
-    ResultadosComponent,
-    SexoPipe,
-    FiltroJugadoresComponent,
+     SexoPipe,
  
   ],
   imports: [
     BrowserModule,Ng2SmartTableModule,FormsModule,RutasModule,ReactiveFormsModule,HttpModule,MatInputModule,BrowserAnimationsModule
   ],
-  providers: [MiHttpService,JugadorService],
+  providers: [MiHttpService,JugadorService,FiltradoJugadoresService],
   bootstrap: [AppComponent],
   // Entrada de datos
    

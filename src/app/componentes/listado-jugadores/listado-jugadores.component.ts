@@ -7,14 +7,15 @@ import { Ng2SmartTableModule, LocalDataSource } from 'ng2-smart-table';
 })
 export class ListadoJugadoresComponent implements OnInit {
   @Input() private jugadores;
-  private data ;
+ 
   constructor() { }
   settings = {
     mode:'inline',
+    
     actions:{
-      add:true,
-      edit:true,
-      delete:true
+      add:false,
+      edit:false,
+      delete:false
     },
     add:{confirmCreate:true},
     edit:{
@@ -23,27 +24,33 @@ export class ListadoJugadoresComponent implements OnInit {
     delete:{confirmDelete:true},
     columns: {
       usuario: {
-        title: 'ID'
-      },
-      cuit: {
-        title: 'Full Name'
+        editable:false,
+        title: 'Usuario',
       },
       sexo: {
-        title: 'User Name'
+        editable:false,
+        title: 'Sexo'
       },
-      fecha: {
-        title: 'Email'
+      mail: {
+        editable:false,
+        title: 'Mail'
       },
-      gano: {
-        title: 'Email'
-      }
+      puntaje: {
+        editable:false,
+        title: 'Puntaje'
+      },
+      juego: {
+        editable:false,
+        title: 'Juego'
+      },
+ 
     }
   };
   ngOnInit() {
-    this.jugadores.subscribe(datos=>{this.data = new LocalDataSource(datos) });
+    
     
   }
- 
+
   
 
 }

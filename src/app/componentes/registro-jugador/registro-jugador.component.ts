@@ -31,7 +31,7 @@ export class RegistroJugadorComponent implements OnInit {
     let password= this.registroForm.get('password').value;
     let sexo = "M";//this.registroForm.get('sexo').value;
     let jugador: Jugador = new Jugador(usuario,mail,sexo,password);
-    this.jugadorService.Crear('registro',jugador);
+    this.jugadorService.Crear('registro',jugador).subscribe(res=>{console.log(res)});
   }
  
 }
