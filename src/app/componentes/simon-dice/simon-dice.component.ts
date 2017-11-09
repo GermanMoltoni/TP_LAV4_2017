@@ -45,7 +45,7 @@ export class SimonDiceComponent implements OnInit {
     
   }
   VerificarJugada(idPad:number){
-    this.flash(idPad);
+    this.pads[idPad-1]  = (this.pads[idPad-1]  === 'inactive' ? 'active' : 'inactive');
     let resultado = this.juego.TurnoJugador(idPad);
     
     if( resultado && this.juego.secJugador.length == this.juego.secMaquina.length){
@@ -60,33 +60,24 @@ export class SimonDiceComponent implements OnInit {
   }
   MostrarSecuencia(){
     let arr = [1,2,4];
-   
-    for (let i = 1; i <= 3; ++i) {
-      
-      
-      
-      let timer1 = TimerObservable.create(500);
-      this.subscription = timer1.subscribe(t => {
-
-        this.flash(arr[i]);
-        let timer1 = TimerObservable.create(500);
-        this.subscription1 = timer1.subscribe(t => {
-          this.flash(arr[i])
-
-        });
-      
+   let i=0;
+    var interva = setInterval(()=>{
     
+      this.pads[i-1]  = (this.pads[i-1]  === 'inactive' ? 'active' : 'inactive');
+      window.setTimeout(()=>{
+        this.pads[i-1]  = (this.pads[i-1]  === 'inactive' ? 'active' : 'inactive');
         
-    
-    });
-
+      },400);
+    i++;
+    if(i>= this.juego.secMaquina.length){
+      clearInterval(interva);
+    }
+    },800)
+      
+      
+      
+   
 
 }
   }
-flash(idPad){
-    this.toggleMove(idPad);
-}
-toggleMove(idPad) {
-  this.pads[idPad-1]  = (this.pads[idPad-1]  === 'inactive' ? 'active' : 'inactive');
-}
-}
+ 
