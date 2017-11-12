@@ -32,7 +32,7 @@ const routes: Routes = [
     {path:'',component:MenuCardComponent},
     {path:'adivina',component:AdivinaMasListadoComponent},
     {path:'agilidad',component:AgilidadMasListadoComponent},
-    {path:'piedrapapelotijera',component:PiedraPapelOtijeraComponent}, 
+    {path:'ppot',component:PiedraPapelOtijeraComponent}, 
     {path:'anagrama',component:AnagramaComponent},
     {path:'simon',component:SimonDiceComponent},
      

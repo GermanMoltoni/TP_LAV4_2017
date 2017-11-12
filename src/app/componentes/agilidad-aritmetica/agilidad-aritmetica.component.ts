@@ -1,4 +1,4 @@
-import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter,OnDestroy } from '@angular/core';
 import {AgilidadAritmetica } from '../../clases/agilidad-aritmetica';
 import {Juego} from '../../clases/juego';
 import {Jugador} from '../../clases/jugador';
@@ -45,6 +45,12 @@ import { ChangeDetectorRef } from "@angular/core";
 export class AgilidadAritmeticaComponent implements OnInit {
   public juego : AgilidadAritmetica;
   public jugador:Jugador;
+  public tiempoMaximo;
+  public tiempo=60;
+  public turnoJugador: boolean;
+  public estado: boolean = false;
+  public tiempoInicio: Date;
+  public tiempoUltimoJug;
     @Output() enviarJuego:EventEmitter<Juego> =new EventEmitter<Juego>();
   public state;
   constructor() { 
@@ -54,16 +60,36 @@ export class AgilidadAritmeticaComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.tiempoMaximo = setInterval(() => { 
+          if (this.estado && new Date().getTime() - this.tiempoUltimoJug.getTime() >= 60000) {
+              this.estado = false;
+              this.Verificar();
+          }
+          if(this.estado)
+            this.tiempo--;
+  }, 1000);
   }
+  ngOnDestroy() {
+    clearInterval(this.tiempoMaximo);
+}
   GenerarNuevo(){
     let jugador = Jugador.getJugador();
-    this.juego = new AgilidadAritmetica('Agilidad Aritmética', jugador);
+    this.juego = new AgilidadAritmetica('Agilidad Aritmética',new Jugador('german','german','m'));
     this.juego.GenerarNuevo();
+    this.tiempoInicio = new Date();
+    this.estado = true;
+    this.tiempoUltimoJug = new Date();
+    
      
    }
   Verificar(){
-     this.juego.Verificar();
-     this.enviarJuego.emit(this.juego);
+    if(this.estado){
+      this.juego.Verificar();
+      this.enviarJuego.emit(this.juego);
+      this.estado=false;
+      return;
+    }
+     
   }
 
 }
