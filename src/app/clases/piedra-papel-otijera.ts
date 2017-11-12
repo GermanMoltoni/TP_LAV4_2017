@@ -13,7 +13,6 @@ export class PiedraPapelOTijera  extends Juego{
     }
     Verificar(){
         this.GenerarNuevo();
-        if(this.gano = (this.maquina == this.opcion))
-            this.tiempo =1;// (new Date().getTime() - this.tiempo.getTime());
+        this.gano = (this.maquina == this.opcion)
     }
 }

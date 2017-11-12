@@ -25,14 +25,16 @@ import { SimonDiceComponent } from '../../componentes/simon-dice/simon-dice.comp
 import { AdivinaMasListadoComponent } from '../../componentes/adivina-mas-listado/adivina-mas-listado.component';
 import { AgilidadMasListadoComponent } from '../../componentes/agilidad-mas-listado/agilidad-mas-listado.component';
 import { JugadoresComponent } from '../../componentes/jugadores/jugadores.component';
- //------------------------------------------
+import { PiedraPapelOtijeraMasListadoComponent } from '../../componentes/piedra-papel-otijera-mas-listado/piedra-papel-otijera-mas-listado.component';
+
+//------------------------------------------
 const routes: Routes = [
   {path:'juegos',component:JuegosComponent,
   children:[
     {path:'',component:MenuCardComponent},
     {path:'adivina',component:AdivinaMasListadoComponent},
     {path:'agilidad',component:AgilidadMasListadoComponent},
-    {path:'ppot',component:PiedraPapelOtijeraComponent}, 
+    {path:'ppot',component:PiedraPapelOtijeraMasListadoComponent}, 
     {path:'anagrama',component:AnagramaComponent},
     {path:'simon',component:SimonDiceComponent},
      

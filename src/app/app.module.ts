@@ -44,6 +44,7 @@ import { ResultadoPipe } from './pipes/resultado.pipe';
 import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/agilidad-mas-listado.component';
 import { JugadoresComponent } from './componentes/jugadores/jugadores.component';
  import { SexoPipe } from './pipes/sexo/sexo.pipe';
+import { PiedraPapelOtijeraMasListadoComponent } from './componentes/piedra-papel-otijera-mas-listado/piedra-papel-otijera-mas-listado.component';
   
 //------------------------------------------
 
@@ -73,6 +74,7 @@ import { JugadoresComponent } from './componentes/jugadores/jugadores.component'
     AgilidadMasListadoComponent,
     JugadoresComponent,
      SexoPipe,
+     PiedraPapelOtijeraMasListadoComponent,
  
   ],
   imports: [

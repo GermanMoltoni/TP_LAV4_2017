@@ -1,6 +1,8 @@
 import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import { PiedraPapelOTijera } from '../../clases/piedra-papel-otijera';
 import {Juego} from '../../clases/juego';
+import {Jugador} from '../../clases/jugador';
+
 @Component({
   selector: 'app-piedra-papel-otijera',
   templateUrl: './piedra-papel-otijera.component.html',
@@ -9,9 +11,8 @@ import {Juego} from '../../clases/juego';
 export class PiedraPapelOtijeraComponent implements OnInit {
   public juego:PiedraPapelOTijera;
   @Output() enviarJuego:EventEmitter<Juego> =new EventEmitter<Juego>();
-
+  public img = './assets/interrogacion.jpg';
   constructor() { 
-     //   this.juego = new PiedraPapelOTijera('Piedra Papel O Tijera',localStorage.getItem("usuario"));
 
   }
 
@@ -19,25 +20,38 @@ export class PiedraPapelOtijeraComponent implements OnInit {
   }
 
   Jugar(opcion:string){
+    this.juego = new PiedraPapelOTijera('Piedra Papel O Tijera',new Jugador('asdsad','asdsadsad','asdsad'));
+    
+    this.juego.GenerarNuevo();
     switch (opcion) {
-      case 'pierda':
+      case 'piedra':
         this.juego.opcion=1;
-                this.juego.Verificar();
-
         break;
       case 'papel':
         this.juego.opcion=2;
-                this.juego.Verificar();
-
         break;
       case 'tijera':
         this.juego.opcion=3;
-        this.juego.Verificar();
-        break;
-      default:
         break;
     }
- 
+    this.Verificar();
+    
+    
   }
-
+  Verificar(){
+    this.juego.Verificar();
+ 
+    switch (this.juego.maquina) {
+      case 1:
+        this.img='./assets/piedra.jpg';
+        break;
+      case 2:
+      this.img='./assets/papel.jpg';
+        break;
+      case 3:
+      this.img='./assets/tijera.jpg';
+        break;
+    }
+    this.enviarJuego.emit(this.juego);
+  }
 }
