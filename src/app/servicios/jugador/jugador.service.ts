@@ -5,7 +5,7 @@ import { Observable }     from 'rxjs/Observable';
 
 @Injectable()
 export class JugadorService {
-  private url:string ='https://germanmoltoni.byethost12.com/';
+  private url:string ='http://germanmoltoni.byethost12.com/';
 
   constructor(private http:MiHttpService) { }
   Crear(path:string,jugador:Jugador){
