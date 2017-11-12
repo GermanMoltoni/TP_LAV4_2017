@@ -1,10 +1,11 @@
-import { Component, OnInit,OnDestroy } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter,OnDestroy } from '@angular/core';
 import {Simon} from '../../clases/simon';
 import {Jugador} from '../../clases/jugador'
 import {trigger,state,style,animate,transition} from '@angular/animations';
 import {Observable} from 'rxjs/Observable'
 import {TimerObservable} from "rxjs/observable/TimerObservable";
 import {Subscription} from "rxjs";
+import {Juego} from '../../clases/juego';
 
 @Component({
   selector: 'app-simon-dice',
@@ -26,7 +27,8 @@ import {Subscription} from "rxjs";
 
 export class SimonDiceComponent implements OnInit,OnDestroy {
     public juego:Simon;
-
+    @Output() enviarJuego:EventEmitter<Juego> =new EventEmitter<Juego>();
+    
     public padState = ['inactive', 'inactive', 'inactive', 'inactive'];
     public tiempoMaximo;
     public turnoJugador: boolean;
@@ -49,7 +51,7 @@ export class SimonDiceComponent implements OnInit,OnDestroy {
     ngOnInit() {
         this.tiempoMaximo = setInterval(() => {
             if(this.tiempoUltimoJug != null){
-                if (this.estado && new Date().getTime() - this.tiempoUltimoJug.getTime() >= 2000) {
+                if (this.estado && new Date().getTime() - this.tiempoUltimoJug.getTime() >= 20000) {
                     this.estado = false;
                     this.TerminarJuego(false);
                 }
@@ -113,18 +115,21 @@ export class SimonDiceComponent implements OnInit,OnDestroy {
     VerificarJugada(idPad: number) {
         this.tiempoUltimoJug = new Date();
         if (this.estado && this.turnoJugador) {
+            this.juego.opcJugador = idPad;
             this.turnoJugador = false;
             this.flash(idPad).then(() => {
-                if (idPad !== this.juego.secMaquina[this.juego.turno]) {
+                 
+                if (this.juego.Verificar()) {
                     this.TerminarJuego(false);
                     return;
                 }
-                if(this.juego.turno == 5){
+                if(this.juego.turno == 3){
                     this.TerminarJuego(true);
                     return;
                 }
                 this.juego.turno++;
-                if (this.juego.Verificar()) {
+                
+                if (this.juego.turno === this.juego.secMaquina.length) {
                     this.turnoJugador = false;
                     this.SumarPuntaje();
                     this.updateModel();
@@ -152,11 +157,12 @@ export class SimonDiceComponent implements OnInit,OnDestroy {
      * @param gameOver 
      */
     public updateModel(gano = null) {
-    console.log(  {score: this.juego.puntaje,
-       estado: this.estado,
-       turno: this.juego.turno,
-       gano: gano
-      } )
+        if(gano != null){
+            this.juego.gano=gano;
+            this.enviarJuego.emit(this.juego);
+            console.log(this.juego);
+        }
+ 
    }
   }
  

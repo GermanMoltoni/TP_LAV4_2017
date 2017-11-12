@@ -45,6 +45,7 @@ import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/
 import { JugadoresComponent } from './componentes/jugadores/jugadores.component';
  import { SexoPipe } from './pipes/sexo/sexo.pipe';
 import { PiedraPapelOtijeraMasListadoComponent } from './componentes/piedra-papel-otijera-mas-listado/piedra-papel-otijera-mas-listado.component';
+import { SimonDiceMasListadoComponent } from './componentes/simon-dice-mas-listado/simon-dice-mas-listado.component';
   
 //------------------------------------------
 
@@ -75,6 +76,7 @@ import { PiedraPapelOtijeraMasListadoComponent } from './componentes/piedra-pape
     JugadoresComponent,
      SexoPipe,
      PiedraPapelOtijeraMasListadoComponent,
+     SimonDiceMasListadoComponent,
  
   ],
   imports: [
