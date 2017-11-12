@@ -20,8 +20,7 @@ import {Subscription} from "rxjs";
         opacity: '1',
         transform: 'scale(1.01)'
       })),
-    //  transition('inactive <=> active', animate('200ms ease-out'))
-    ])
+     ])
   ]
 })
 
@@ -29,71 +28,45 @@ export class SimonDiceComponent implements OnInit,OnDestroy {
   public juego:Simon;
   public turno:boolean;
   public  padState = ['inactive', 'inactive', 'inactive', 'inactive'];
+  public tiempoMaximo;
+  public turnoJugador: boolean;
+  public estado: boolean = false;
+  public tiempoInicio: Date;
+  public tiempoUltimoJug: Date;
   constructor() { }
 
   GenerarNuevo(){
-    
    // let jugador = Jugador.getJugador();
    // if(jugador != null){
     this.juego = new Simon('Simon Dice',new Jugador('german','german','m'));
-          this.juego.GenerarNuevo(); 
-
+    this.juego.GenerarNuevo();
     this.ComenzarJuego()
- 
    // }
-    
   }
- 
- 
-  private gameTimeoutTimer;
- 
- 
- 
-   /**
-    * Determines whether we are currently playing the sequence or waiting for user to repeat it
-    */
-   private playerTurn: boolean;
- 
-   /**
-    * Indicates whether the game is currently active
-    */
-   playing: boolean = false;
- 
-    
-   /**
-    * Keeps track of the time when the game started
-    */
-   private gameStartTime: Date;
- 
-  
-   /**
-    * Stores the time of the last move. We use this to implement the game timeout.
-    */
-   private lastMoveTime: Date;
- 
-   
+ /**
+  * Verifica que si el jugador no realizo su jugada pierda el juego
+  */
    ngOnInit() {
-     /* Set up the game timeout check */
-     this.gameTimeoutTimer = setInterval(() => {
-       if (this.playing && new Date().getTime() - this.lastMoveTime.getTime() >= 20000) {
-         this.playing = false;
+     this.tiempoMaximo = setInterval(() => {
+       if (this.estado && new Date().getTime() - this.tiempoUltimoJug.getTime() >= 20000) {
+         this.estado = false;
          this.TerminarJuego();
        }
      }, 1000); 
    }
  
    ngOnDestroy() {
-     clearInterval(this.gameTimeoutTimer);
+     clearInterval(this.tiempoMaximo);
    }
- 
+   
    ComenzarJuego() {
-     this.gameStartTime = new Date();
+     this.tiempoInicio = new Date();
      this.TurnoMaquina();
+     this.estado=true;
    }
  
    TurnoMaquina() {
      this.juego.TurnoMaquina();
-     this.juego.turno = 0;
      this.MostrarSecuencia();
      this.updateModel();
    }
@@ -113,24 +86,20 @@ export class SimonDiceComponent implements OnInit,OnDestroy {
        const idPad = this.juego.secMaquina[this.juego.turno];
        this.flash(idPad).then(() => {
          this.juego.turno++;
-         setTimeout(() => this.MostrarSecuencia(), 100);
+         setTimeout(() => this.MostrarSecuencia(), 200);
        });
      } else {
-       this.playerTurn = true;
+       this.turnoJugador = true;
        this.juego.turno = 0;
-       this.lastMoveTime = new Date();
+       this.tiempoUltimoJug = new Date();
      }
    }
  
    VerificarJugada(idPad: number) {
-     this.lastMoveTime = new Date();
-     if (!this.playing) {
-       this.playing = true;
-       setTimeout(() => this.ComenzarJuego(), 300);
-       return;
-     }
-     if (this.playerTurn) {
-       this.playerTurn = false;
+     this.tiempoUltimoJug = new Date();
+  
+     if (this.estado && this.turnoJugador) {
+       this.turnoJugador = false;
        this.updateModel();
        this.flash(idPad).then(() => {
          if (idPad !== this.juego.secMaquina[this.juego.turno]) {
@@ -139,11 +108,11 @@ export class SimonDiceComponent implements OnInit,OnDestroy {
          }
          this.juego.turno++;
          if (this.juego.Verificar()) {
-           this.playerTurn = false;
+           this.turnoJugador = false;
            this.SumarPuntaje();
            this.TurnoMaquina();
          } else {
-           this.playerTurn = true;
+           this.turnoJugador = true;
          }
        });
      }
@@ -161,10 +130,10 @@ export class SimonDiceComponent implements OnInit,OnDestroy {
  
    }
  
-   private updateModel(gameOver = false) {
+   public updateModel(gameOver = false) {
     
     console.log(  {score: this.juego.puntaje,
-       playing: this.playing,
+       estado: this.estado,
        turno: this.juego.turno,
        gameOver: gameOver
       } )

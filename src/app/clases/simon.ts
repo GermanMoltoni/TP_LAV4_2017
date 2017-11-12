@@ -5,7 +5,7 @@ export class Simon extends Juego{
     public secMaquina:number[];
     public secJugador:number[];
     public puntaje:number;
-    public turno;
+    public turno:number;
     public dificultad:number=1;
     constructor(nombre:string,jugador:Jugador){
         super(nombre,jugador);
