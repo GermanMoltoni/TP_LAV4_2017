@@ -16,7 +16,7 @@ export class Simon extends Juego{
         this.turno = 0;
         this.secJugador = new Array<number>();
         this.secMaquina = new Array<number>();
-        this.TurnoMaquina();
+      
     }
     Verificar(){
         if(this.secJugador[this.turno] == this.secMaquina[this.turno]){
@@ -30,7 +30,7 @@ export class Simon extends Juego{
             
     }
     TurnoMaquina(){
-        this.secMaquina.push(Math.floor(Math.random() * 4) + 1);
+        this.secMaquina.push(Math.floor(Math.random() * 4) );
         this.turno = 0;
         
     }
