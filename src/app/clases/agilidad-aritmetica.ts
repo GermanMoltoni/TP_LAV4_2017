@@ -10,6 +10,14 @@ export class AgilidadAritmetica extends Juego{
     constructor(nombre:string,jugador:Jugador){
         super(nombre,jugador);
     }
+    ToObj(){
+        return {
+            jugador:this.jugador.toObj(),
+            nombre:this.nombre,
+            gano:this.gano,
+            puntaje:null
+        }
+    }
     GenerarNuevo(){
         this.gano=false;
         this.numUno = Math.round(Math.random()*100);

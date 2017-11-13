@@ -14,4 +14,12 @@ export class AdivinaElNumero extends Juego{
         this.gano=false;
         this.numeroSecreto = Math.round(Math.random()*100);
      }
+     ToObj(){
+        return {
+            jugador:this.jugador.toObj(),
+            nombre:this.nombre,
+            gano:this.gano,
+            puntaje:null
+        }
+    }
 }

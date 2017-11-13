@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
  
 import { MiHttpService } from './servicios/mi-http/mi-http.service'; 
 import {JugadorService} from './servicios/jugador/jugador.service'; 
+import {JuegoService} from './servicios/juego/juego.service'; 
+
 import {FiltradoJugadoresService} from './servicios/filtrado-jugadores/filtrado-jugadores.service'
 
 //Modulos Propios
@@ -85,7 +87,7 @@ import { SimonDiceMasListadoComponent } from './componentes/simon-dice-mas-lista
     BrowserModule,Ng2SmartTableModule,FormsModule,RutasModule,ReactiveFormsModule,HttpModule,MatInputModule,BrowserAnimationsModule,
 
   ],
-  providers: [MiHttpService,JugadorService,FiltradoJugadoresService],
+  providers: [MiHttpService,JugadorService,FiltradoJugadoresService,JuegoService],
   bootstrap: [AppComponent],
   // Entrada de datos
    

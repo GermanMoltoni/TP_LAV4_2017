@@ -11,13 +11,13 @@ export class FiltradoJugadoresService {
     let jugadores;
     switch(filtro){
       case "ganadores":
-        jugadores= this.jugador.TraerJugadores(ruta).map(data=>data.filter(jugador => jugador.gano == true)) ;
+   //     jugadores= this.jugador.TraerJugadores(ruta).map(data=>data.filter(jugador => jugador.gano == true)) ;
       break;
       case"perdedores":
-        jugadores=this.jugador.TraerJugadores(ruta).map(data=>data.filter(jugador => jugador.gano == false));
+   //     jugadores=this.jugador.TraerJugadores(ruta).map(data=>data.filter(jugador => jugador.gano == false));
       break;
       default:
-        jugadores= this.jugador.TraerJugadores(ruta);
+   //     jugadores= this.jugador.TraerJugadores(ruta);
       break;
     }
     return jugadores;

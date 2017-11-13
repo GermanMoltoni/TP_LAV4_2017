@@ -15,4 +15,12 @@ export class PiedraPapelOTijera  extends Juego{
         this.GenerarNuevo();
         this.gano = (this.maquina == this.opcion)
     }
+    ToObj(){
+        return {
+            jugador:this.jugador.toObj(),
+            nombre:this.nombre,
+            gano:this.gano,
+            puntaje:null
+        }
+    }
 }

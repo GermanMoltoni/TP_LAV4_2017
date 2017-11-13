@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Juego} from '../../clases/juego';
+import {JuegoService} from '../../servicios/juego/juego.service'
 
 @Component({
   selector: 'app-simon-dice-mas-listado',
@@ -9,7 +10,7 @@ import {Juego} from '../../clases/juego';
 export class SimonDiceMasListadoComponent implements OnInit {
   listadoParaCompartir:Juego[];
   
-  constructor() {
+  constructor(public juegoService:JuegoService) { 
     this.listadoParaCompartir = new Array<Juego>();
     
    }
@@ -17,6 +18,8 @@ export class SimonDiceMasListadoComponent implements OnInit {
   ngOnInit() {
   }
   capturaJuego(juego:Juego){
+    this.juegoService.Guardar(juego.ToObj());
+    
     this.listadoParaCompartir.push(juego);
   
   }
