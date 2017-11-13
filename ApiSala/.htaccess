@@ -1,7 +1,16 @@
-Header Set Access-Control-Allow-Origin 'https://germanmoltoni.github.io'
-Header always set Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"
-Header always set Access-Control-Allow-Headers "Origin, x-requested-with, content-type,Accept,Authorization"
-Header always set Access-Control-Allow-Credentials 'false'
+ 
+
 RewriteEngine On 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ Api.php [QSA,L]
+
+ 
+     RewriteCond %{REQUEST_METHOD} OPTIONS
+ 
+ 
+  
+    Header always set Access-Control-Max-Age 1728000
+    Header always set Access-Control-Allow-Origin: "https://germanmoltoni.github.io"
+    Header always set Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
+    Header always set Access-Control-Allow-Headers: "DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,C$
+    Header always set Access-Control-Allow-Credentials true

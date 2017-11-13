@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
   onClick(){
     this.jugadorHttp.Login('login',{usuario:this.usuario,password:this.password}).subscribe(res=>{
-      if(res.msg != undefined){
+      if(res.msg != undefined && res.msg != null){
          localStorage.removeItem("token");
         localStorage.removeItem("jugador");
         

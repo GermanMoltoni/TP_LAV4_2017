@@ -13,9 +13,9 @@ $app = new \Slim\App(["settings" => $config]);
 $app->add(function ($req, $res, $next) {
     $response = $next($req, $res);
     return $response
-            ->withHeader('Access-Control-Allow-Origin', '')
-            ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
-            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+            ->withHeader('Access-Control-Allow-Origin', 'https://germanmoltoni.github.io')
+            ->withHeader('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token')
+            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
 });
 $app->group('/jugador', function () {
     $this->post('', \JugadorApi::class .':AltaApi')->add(\FormMDW::class.':FormJugador');
