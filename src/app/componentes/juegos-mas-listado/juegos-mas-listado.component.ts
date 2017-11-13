@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FiltradoJugadoresService} from '../../servicios/filtrado-jugadores/filtrado-jugadores.service'
+import {FiltrarJuegosService} from '../../servicios/filtrar-juegos/filtrar-juegos.service'
 import {Jugador} from '../../clases/jugador';
 import { Observable }     from 'rxjs/Observable'; 
 import { Ng2SmartTableModule, LocalDataSource } from 'ng2-smart-table';
@@ -10,14 +10,13 @@ import { Ng2SmartTableModule, LocalDataSource } from 'ng2-smart-table';
   styleUrls: ['./juegos-mas-listado.component.css']
 })
 export class JuegosMasListadoComponent implements OnInit {
-  public jugadores ;
-  constructor(public filtro:FiltradoJugadoresService) { }
+  public juegos ;
+  constructor(public filtro:FiltrarJuegosService) { }
 
   ngOnInit() {
     this.Listar('todos');
   }
   Listar(opcion:string='todos'){
-  
-      this.filtro.Filtrar(opcion,'jugador').subscribe(datos=>{this.jugadores = new LocalDataSource(datos) });
+      this.filtro.Filtrar(opcion,'juegos').subscribe(datos=>{this.juegos = new LocalDataSource(datos) });
   }
 }

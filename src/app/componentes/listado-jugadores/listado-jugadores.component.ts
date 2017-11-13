@@ -1,9 +1,11 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Ng2SmartTableModule, LocalDataSource } from 'ng2-smart-table';
+import { SexoPipe } from '../../pipes/sexo/sexo.pipe';
+import { validateConfig } from '@angular/router/src/config';
 @Component({
   selector: 'app-listado-jugadores',
   templateUrl: './listado-jugadores.component.html',
-  styleUrls: ['./listado-jugadores.component.css']
+  styleUrls: ['./listado-jugadores.component.css'],
 })
 export class ListadoJugadoresComponent implements OnInit {
   @Input() private jugadores;
@@ -29,7 +31,11 @@ export class ListadoJugadoresComponent implements OnInit {
       },
       sexo: {
         editable:false,
-        title: 'Sexo'
+        title: 'Sexo',
+        valuePrepareFunction: (value) => { 
+          let pipe = new SexoPipe();
+          return pipe.transform(value);
+        }
       },
       mail: {
         editable:false,

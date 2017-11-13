@@ -22,38 +22,14 @@ export class JuegoService {
     return this.TraerJugadasLocal();
     //return this.http.Get(this.url+path) as Observable<Jugador[]>;
   }
-  /*Login(path:string,data:{usuario:string,password:string}){
-    return this.LoginLocal(data.usuario,data.password);
-    //return this.http.Post(this.url+path,data)
-    
-  }
-  
-  LoginLocal(usuario:string,password:string){
-    let jugador:Jugador;
-    let jugadas = localStorage['jugadores'];
-    if(jugadas != null){
-      jugadas = JSON.parse(jugadas);
-      for(let i in jugadas){
-        if(jugadas[i].usuario == usuario && jugadas[i].password ==  password){
-          jugador = jugadas[i];
-          jugador = new Jugador(jugador.usuario,jugador.mail,jugador.sexo);
-          break;
-        }
-      }
-    }
-    return new Observable<{token:string,msg:string,jugador:Jugador}>(obs => {
-      if(jugador != null)
-        obs.next({jugador:jugador,token:'',msg:null})
-      else
-        obs.next({jugador:jugador,token:'',msg:'no se encuentra'})
-    });
-  }*/
+
   TraerJugadasLocal(){
     let jugadas = localStorage['jugadas'];
     if(jugadas != null){
       jugadas = JSON.parse(jugadas);
       return new Observable<any[]>(obs => {
         if(jugadas != null)
+        console.log(jugadas)
           obs.next(jugadas)
       });
   }

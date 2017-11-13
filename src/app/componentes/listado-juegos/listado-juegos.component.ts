@@ -1,12 +1,13 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Ng2SmartTableModule, LocalDataSource } from 'ng2-smart-table';
+import { ResultadoPipe } from '../../pipes/resultado.pipe';
 @Component({
   selector: 'app-listado-juegos',
   templateUrl: './listado-juegos.component.html',
   styleUrls: ['./listado-juegos.component.css']
 })
 export class ListadoJuegosComponent implements OnInit {
-  @Input() private jugadores;
+  @Input() private juegos;
   
    constructor() { }
    settings = {
@@ -23,17 +24,25 @@ export class ListadoJuegosComponent implements OnInit {
      },
      delete:{confirmDelete:true},
      columns: {
-       usuario: {
+       nombre: {
+         editable:false,
+         title: 'Nombre',
+       },
+       jugador: {
          editable:false,
          title: 'Usuario',
+         valuePrepareFunction: (value) => { 
+          return value.usuario;
+        }
        },
-       sexo: {
+       gano: {
          editable:false,
-         title: 'Sexo'
-       },
-       mail: {
-         editable:false,
-         title: 'Mail'
+         title: 'Resultado',
+         valuePrepareFunction: (value) => { 
+           let pipe = new ResultadoPipe();
+
+          return pipe.transform(value);
+        }
        },
      }
    };
