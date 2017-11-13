@@ -17,41 +17,17 @@ export class JuegoService {
     }
     jugadas.push(obj);
     localStorage['jugadas'] = JSON.stringify(jugadas);
-    
   }
- /* GuardarJugada(path:string,juego:Juego){
-    let jugadas = localStorage['jugadas'];
-    if(jugadas != null){
-      jugadas = JSON.parse(jugadas);
-      let jugador  =
-      jugadas.push();
-      localStorage['jugadores'] = JSON.stringify(jugadas);
-    }
-    else{
-      jugadas = [
-        {usuario:'carlos_uno',mail:'carlos@salajuegos',sexo:'M',password:'123321123'},
-        {usuario:'alejandro_dos',mail:'ale@salaprueba',sexo:'M',password:'222222222'},
-        {usuario:'laura_tres',mail:'laura@hotmail.com',sexo:'F',password:'111111222'},
-        {usuario:'Juan_cuatro',mail:'juan@test',sexo:'M',password:'123123123'},
-      ];
-      jugadas.push({usuario:jugador.usuario,mail:jugador.mail,sexo:jugador.sexo,password:jugador.password});
-      localStorage['jugadores'] = JSON.stringify(jugadas);
-    }
-    return new Observable(obs => {
-      obs.next('registrado')
-    });
-    //return this.http.Post(this.url+path,{usuario:jugador.usuario,sexo:jugador.sexo,mail:jugador.mail,password:jugador.password});
-    
+  TraerJugadas(path:string):Observable<Juego[]>{
+    return this.TraerJugadasLocal();
+    //return this.http.Get(this.url+path) as Observable<Jugador[]>;
   }
-  Login(path:string,data:{usuario:string,password:string}){
+  /*Login(path:string,data:{usuario:string,password:string}){
     return this.LoginLocal(data.usuario,data.password);
     //return this.http.Post(this.url+path,data)
     
   }
-  TraerJugadores(path:string):Observable<Jugador[]>{
-    return this.TraerJugadoresLocal();
-    //return this.http.Get(this.url+path) as Observable<Jugador[]>;
-  }
+  
   LoginLocal(usuario:string,password:string){
     let jugador:Jugador;
     let jugadas = localStorage['jugadores'];
@@ -71,16 +47,15 @@ export class JuegoService {
       else
         obs.next({jugador:jugador,token:'',msg:'no se encuentra'})
     });
-  }
-  TraerJugadoresLocal(){
-    let jugador:Jugador;
-    let jugadas = localStorage['jugadores'];
+  }*/
+  TraerJugadasLocal(){
+    let jugadas = localStorage['jugadas'];
     if(jugadas != null){
       jugadas = JSON.parse(jugadas);
-      return new Observable<Jugador[]>(obs => {
+      return new Observable<any[]>(obs => {
         if(jugadas != null)
           obs.next(jugadas)
       });
   }
-}*/
+}
 }

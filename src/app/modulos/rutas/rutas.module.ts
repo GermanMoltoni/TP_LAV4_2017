@@ -27,6 +27,7 @@ import { AgilidadMasListadoComponent } from '../../componentes/agilidad-mas-list
 import { JugadoresComponent } from '../../componentes/jugadores/jugadores.component';
 import { PiedraPapelOtijeraMasListadoComponent } from '../../componentes/piedra-papel-otijera-mas-listado/piedra-papel-otijera-mas-listado.component';
 import { SimonDiceMasListadoComponent } from '../../componentes/simon-dice-mas-listado/simon-dice-mas-listado.component';
+import { JuegosMasListadoComponent } from '../../componentes/juegos-mas-listado/juegos-mas-listado.component';
 
 //------------------------------------------
 const routes: Routes = [
@@ -41,6 +42,7 @@ const routes: Routes = [
      
   ]},
   {path:'jugadores',component:JugadoresComponent},
+  {path:'listajuegos',component:JuegosMasListadoComponent},
   {path:'',component:PaginaPrincipalComponent},
   {path:'about',component:AboutMeComponent},
   {path:'login',component:LoginComponent},

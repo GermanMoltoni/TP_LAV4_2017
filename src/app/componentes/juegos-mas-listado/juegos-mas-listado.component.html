@@ -1,0 +1,16 @@
+<app-menu-juegos></app-menu-juegos>
+<div class="row" >
+    <div class="col-md-2"></div>
+        <div class="col-md-10">
+                <button class="btn btn-lg" (click)="Listar('ganadores')"> Ganadores</button>
+                <button class="btn btn-lg" (click)="Listar('perdedores')"> Perdedores</button>
+                <button class="btn btn-lg" (click)="Listar('todos')"> Todos</button>
+        </div>
+</div>
+<div class="row" style="margin:20px 0px 0px 0px;">
+        <div class="col-md-2"></div>
+<div class="col-md-8 panel" >
+      <h2 class="text-center"> Listado de Jugadores y Resultados</h2>
+<app-listado-jugadores [jugadores]="jugadores"></app-listado-jugadores>
+</div>
+</div> 

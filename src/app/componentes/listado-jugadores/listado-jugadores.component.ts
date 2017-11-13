@@ -35,15 +35,6 @@ export class ListadoJugadoresComponent implements OnInit {
         editable:false,
         title: 'Mail'
       },
-      puntaje: {
-        editable:false,
-        title: 'Puntaje'
-      },
-      juego: {
-        editable:false,
-        title: 'Juego'
-      },
- 
     }
   };
   ngOnInit() {
