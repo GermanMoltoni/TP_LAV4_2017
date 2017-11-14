@@ -14,20 +14,20 @@ export class Anagrama extends Juego {
     public ObtenerCadenaSecreta(){
         return this.arr_palabras[Math.floor(Math.random() * this.arr_length)];
     }
-    public ObtenerCadenaErronea(){
+    public ObtenerCadenaNueva(){
         let aux;
-        do {
-            aux = StringLib.replaceLetter(this.cadena_secreta);
+        do{
+            aux= StringLib.shuffle(this.cadena_secreta);
         }
-        while(StringLib.check(aux,this.cadena_secreta));
-            return StringLib.shuffle(aux);
+        while (aux === this.cadena_secreta);
+        return aux;
     }
     public ToObj(){
 
     }
     public GenerarNuevo(){
         this.cadena_secreta = this.ObtenerCadenaSecreta();
-        this.cadena_juego = this.ObtenerCadenaErronea();
+        this.cadena_juego = this.ObtenerCadenaNueva();
     }
     public Verificar(){
 
