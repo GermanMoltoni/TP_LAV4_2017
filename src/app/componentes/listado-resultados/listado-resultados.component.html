@@ -7,9 +7,9 @@
             <th [hidden]='listado == null || listado[0] == undefined || listado[0].puntaje == undefined || listado[0].puntaje ==null'>Puntaje</th>
         </tr>
     </thead>
-    <tbody  style="background-color:white;  
-     ">
-      <tr *ngFor='let juego of listado'>
+    <tbody   style="background-color:white;">
+        
+      <tr  *ngFor='let juego of listado'>
          
                 <td>{{juego.jugador.usuario}}</td>
 

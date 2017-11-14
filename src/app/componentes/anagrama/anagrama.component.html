@@ -1,3 +1,28 @@
-<p>
-  anagrama works!
-</p>
+ 
+ 
+        <div class="  panel  "   >
+          <h2 class="text-center">{{juego.nombre}}</h2>
+          <div class="row">
+            <h4 class="text-center">{{juego.cadena_juego}}</h4>
+          </div>
+          <div class="row">
+                   <div class="form-group  "   >
+                           <div class="col-md-2"></div>
+                       <div class="col-md-4 "  >
+                          <label >Respuesta
+                          <input  class="form-control" name='num' type="text" [(ngModel)]='palabra'/></label>
+                      </div>
+                      <div class="col-md-3" [hidden]='true  ' >
+                              <label [hidden]='false'>Palabra Correcta</label>
+                              <p class="text-center" [hidden]='false'><strong>{{juego.cadena_secreta}}</strong></p>
+                      </div>
+                      </div>
+          </div>
+             
+              <div class="form-group text-center">
+                      <button mat-raised-button class="btn btn-lg"(click)='GenerarNuevo()' >Nuevo</button>
+                      <button mat-raised-button   class="btn  btn-lg" (click)='Verificar()' >Verificar</button>
+              </div>     
+              
+      </div>
+

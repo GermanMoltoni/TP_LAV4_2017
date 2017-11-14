@@ -55,6 +55,7 @@ import { SimonDiceMasListadoComponent } from './componentes/simon-dice-mas-lista
 import { ListadoJuegosComponent } from './componentes/listado-juegos/listado-juegos.component';
 import { JuegosMasListadoComponent } from './componentes/juegos-mas-listado/juegos-mas-listado.component';
 import { PuntajePipe } from './pipes/puntaje/puntaje.pipe';
+import { AnagramaMasListadoComponent } from './componentes/anagrama-mas-listado/anagrama-mas-listado.component';
    
 //------------------------------------------
 
@@ -89,6 +90,7 @@ import { PuntajePipe } from './pipes/puntaje/puntaje.pipe';
      ListadoJuegosComponent,
      JuegosMasListadoComponent,
      PuntajePipe,
+     AnagramaMasListadoComponent,
  
  
   ],

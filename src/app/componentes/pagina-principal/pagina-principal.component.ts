@@ -20,6 +20,9 @@ export class PaginaPrincipalComponent implements OnInit {
         {usuario:'Juan_cuatro',mail:'juan@test',sexo:'M',password:'123123123'},
       ]));
     }
+    if(localStorage['jugadas'] == null){
+      localStorage.setItem('jugadas',JSON.stringify([]));
+    }
     
 
     if(localStorage.getItem('token') != null && localStorage.getItem("jugador") != null)
