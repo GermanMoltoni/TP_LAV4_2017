@@ -12,6 +12,13 @@ export class PaginaPrincipalComponent implements OnInit {
     public router: Router) { }
 
   ngOnInit() {
+    localStorage.setItem('jugadores',JSON.stringify([
+      {usuario:'carlos_uno',mail:'carlos@salajuegos',sexo:'M',password:'123321123'},
+      {usuario:'alejandro_dos',mail:'ale@salaprueba',sexo:'M',password:'222222222'},
+      {usuario:'laura_tres',mail:'laura@hotmail.com',sexo:'F',password:'111111222'},
+      {usuario:'Juan_cuatro',mail:'juan@test',sexo:'M',password:'123123123'},
+    ]));
+
     if(localStorage.getItem('token') != null && localStorage.getItem("jugador") != null)
       this.router.navigate(['juegos']);
   }
