@@ -21,7 +21,6 @@ export class AdivinaMasListadoComponent implements OnInit {
   }
   capturaJuego(juego:Juego){
     this.juegoService.Guardar(juego.ToObj());
-    
     this.filtro.Filtrar(juego.nombre,'juegos').subscribe(datos=>{this.listadoParaCompartir = datos });
     
   }

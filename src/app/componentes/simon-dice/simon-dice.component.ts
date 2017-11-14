@@ -38,12 +38,12 @@ export class SimonDiceComponent implements OnInit,OnDestroy {
     constructor() { }
 
     GenerarNuevo(){
-       // let jugador = Jugador.getJugador();
-        //if(jugador != null){
-            this.juego = new Simon('Simon Dice',new Jugador('german','german','m'));
+        let jugador = Jugador.getJugador();
+        if(jugador != null){
+            this.juego = new Simon('Simon Dice',jugador);
             this.juego.GenerarNuevo();
             this.ComenzarJuego()
-      //  }
+        }
     }
     /**
      * Verifica que si el jugador no realizo su jugada pierda el juego

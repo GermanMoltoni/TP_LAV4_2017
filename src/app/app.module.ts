@@ -20,8 +20,10 @@ import { RutasModule } from './modulos/rutas/rutas.module';
 import {HttpModule} from '@angular/http';
 import { RouterModule,Routes }   from '@angular/router';//rutas
 import { FormsModule,ReactiveFormsModule}   from '@angular/forms';
-import {MatInputModule,MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatCardModule,MatSelectModule,MatInputModule,MatButtonModule, MatCheckboxModule} from '@angular/material';
+
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Componentes
@@ -52,6 +54,7 @@ import { PiedraPapelOtijeraMasListadoComponent } from './componentes/piedra-pape
 import { SimonDiceMasListadoComponent } from './componentes/simon-dice-mas-listado/simon-dice-mas-listado.component';
 import { ListadoJuegosComponent } from './componentes/listado-juegos/listado-juegos.component';
 import { JuegosMasListadoComponent } from './componentes/juegos-mas-listado/juegos-mas-listado.component';
+import { PuntajePipe } from './pipes/puntaje/puntaje.pipe';
    
 //------------------------------------------
 
@@ -79,18 +82,19 @@ import { JuegosMasListadoComponent } from './componentes/juegos-mas-listado/jueg
     AdivinaMasListadoComponent,
     ResultadoPipe,
     AgilidadMasListadoComponent,
-    JugadoresComponent,
+    JugadoresComponent, 
      SexoPipe,
      PiedraPapelOtijeraMasListadoComponent,
      SimonDiceMasListadoComponent,
      ListadoJuegosComponent,
      JuegosMasListadoComponent,
+     PuntajePipe,
  
  
   ],
   imports: [
     BrowserModule,Ng2SmartTableModule,FormsModule,RutasModule,ReactiveFormsModule,HttpModule,MatInputModule,BrowserAnimationsModule,
-
+    MatRadioModule
   ],
   providers: [MiHttpService,JugadorService,FiltrarJuegosService,JuegoService],
   bootstrap: [AppComponent],

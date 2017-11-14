@@ -1,19 +1,33 @@
-<table class="table table-condensed">
+<table class="table table-condensed" >
     <thead class="bg-danger">
         <tr>
           
             <th>Usuario</th>
             <th>Resultado</th>
+            <th [hidden]='listado == null || listado[0] == undefined || listado[0].puntaje == undefined || listado[0].puntaje ==null'>Puntaje</th>
         </tr>
     </thead>
-    <tbody  style="background-color:white;">
+    <tbody  style="background-color:white;  
+     ">
       <tr *ngFor='let juego of listado'>
          
                 <td>{{juego.jugador.usuario}}</td>
 
         <td>{{juego.gano | resultado}}</td>
- 
+        <td [hidden]='juego.puntaje | puntaje'>{{juego.puntaje}}</td>
       </tr>
     </tbody>
 
 </table>
+<style>
+  tbody {
+ 
+    height: 100px;
+    overflow: auto;
+    width:100%;
+}
+ 
+
+thead > tr, tbody{
+    display:block;}
+</style>

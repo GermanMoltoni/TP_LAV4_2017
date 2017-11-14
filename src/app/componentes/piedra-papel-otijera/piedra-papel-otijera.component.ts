@@ -10,6 +10,7 @@ import {Jugador} from '../../clases/jugador';
 })
 export class PiedraPapelOtijeraComponent implements OnInit {
   public juego:PiedraPapelOTijera;
+  public jugador:Jugador;
   @Output() enviarJuego:EventEmitter<Juego> =new EventEmitter<Juego>();
   public img = './assets/interrogacion.jpg';
   constructor() { 
@@ -20,7 +21,9 @@ export class PiedraPapelOtijeraComponent implements OnInit {
   }
 
   Jugar(opcion:string){
-    this.juego = new PiedraPapelOTijera('Piedra Papel O Tijera',new Jugador('asdsad','asdsadsad','asdsad'));
+    let jugador = Jugador.getJugador();
+    if(jugador != null){
+    this.juego = new PiedraPapelOTijera('Piedra Papel O Tijera',jugador);
     
     this.juego.GenerarNuevo();
     switch (opcion) {
@@ -36,7 +39,7 @@ export class PiedraPapelOtijeraComponent implements OnInit {
     }
     this.Verificar();
     
-    
+  }
   }
   Verificar(){
     this.juego.Verificar();

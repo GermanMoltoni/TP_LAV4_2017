@@ -4,9 +4,14 @@
                 <h2 class="text-center">Adivina El Número</h2>
                 <div class="row">
                          <div class="form-group  "  [@entradabtn]="state" >
+                                 <div class="col-md-2"></div>
                              <div class="col-md-4 text-center"  >
                                 <label for='num'>Numero Ingresado</label>
                                 <input  class="form-control" name='num' type="text" [(ngModel)]='juego.nIngresado'/>
+                            </div>
+                            <div class="col-md-3"  >
+                                    <label [hidden]='resultado'>Número Secreto</label>
+                                    <p class="text-center" [hidden]='resultado'><strong>{{juego.numeroSecreto}}</strong></p>
                             </div>
                             </div>
                 </div>

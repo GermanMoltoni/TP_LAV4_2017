@@ -29,9 +29,12 @@ export class JuegoService {
       jugadas = JSON.parse(jugadas);
       return new Observable<any[]>(obs => {
         if(jugadas != null)
-        console.log(jugadas)
-          obs.next(jugadas)
+           obs.next(jugadas)
       });
   }
+  return new Observable<any[]>(obs => {
+    if(jugadas != null)
+       obs.next([])
+  });
 }
 }

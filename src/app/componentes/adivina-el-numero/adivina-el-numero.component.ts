@@ -31,6 +31,16 @@ import { ChangeDetectorRef } from "@angular/core";
         animate(500, style({transform: 'translateX(-100%)'}))
       ])
     ]),
+    trigger('entradasecre', [
+      state('in', style({transform: 'translateX(0)'})),
+      transition(':enter', [
+        style({transform: 'translateX(-100%)'}),
+        animate(500)
+      ]),
+      transition(':leave', [
+        animate(500, style({transform: 'translateX(-100%)'}))
+      ])
+    ]),
     trigger('entradabtn', [
       state('in', style({transform: 'translateX(0)'})),
       transition(':enter', [
@@ -47,25 +57,29 @@ export class AdivinaElNumeroComponent implements OnInit {
   public juego:AdivinaElNumero;
   public nIngresado:number;
   public state;
+  public resultado:boolean=true;
+  public estadoJuego:boolean;
   @Output() enviarJuego:EventEmitter<Juego> =new EventEmitter<Juego>();
   constructor(public change :ChangeDetectorRef) { 
     let jugador = Jugador.getJugador();
-    this.juego = new AdivinaElNumero('Adivina el numero',jugador);
+    this.juego = new AdivinaElNumero('Adivina El Número',jugador);
     this.state = ":enter";
   }
   ngOnInit() {
   }
   GenerarNuevo(){
     let jugador = Jugador.getJugador();
-    this.juego = new AdivinaElNumero('Adivina el numero',jugador);
+    this.juego = new AdivinaElNumero('Adivina El Número',jugador);
     this.juego.GenerarNuevo();
-    this.state = ':enter';
-    this.change.detectChanges();
-    console.log(this.juego)
-  }
+     this.estadoJuego=true;
+   }
   Verificar(){
-     this.juego.Verificar();
-    this.enviarJuego.emit(this.juego);
+    if(this.estadoJuego){
+      this.juego.Verificar();
+       this.estadoJuego=false;
+     this.enviarJuego.emit(this.juego);
+    }
+     
   }
 
 }

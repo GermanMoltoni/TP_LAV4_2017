@@ -8,6 +8,7 @@ import {Juego} from '../../clases/juego'
 export class ListadoResultadosComponent implements OnInit {
   @Input() public listado:Juego[];// Pasa info de un componente a otro.
   constructor() { }
+  public puntaje:boolean=true;
 
   ngOnInit() {
   }
