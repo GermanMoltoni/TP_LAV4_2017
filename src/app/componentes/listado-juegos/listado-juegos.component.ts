@@ -7,7 +7,7 @@ import { ResultadoPipe } from '../../pipes/resultado.pipe';
   styleUrls: ['./listado-juegos.component.css']
 })
 export class ListadoJuegosComponent implements OnInit {
-  @Input() private juegos;
+  @Input() public juegos;
   
    constructor() { }
    settings = {

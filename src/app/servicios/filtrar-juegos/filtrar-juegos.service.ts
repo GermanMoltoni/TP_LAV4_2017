@@ -18,11 +18,17 @@ export class FiltrarJuegosService {
       case"Simon Dice":
       juegos= this.juego.TraerJugadas(ruta).map(data=>data.filter(juego => juego.nombre == 'Simon Dice')) ;
       break;
-      case"Agilidad Aritmetica":
+      case"Agilidad Aritmética":
       juegos= this.juego.TraerJugadas(ruta).map(data=>data.filter(juego => juego.nombre == 'Agilidad Aritmetica')) ;
       break;
       case"Piedra Papel o Tijera":
       juegos= this.juego.TraerJugadas(ruta).map(data=>data.filter(juego => juego.nombre == 'Piedra Papel o Tijera')) ;
+      break;
+      case"Adivina El Número":
+        juegos= this.juego.TraerJugadas(ruta).map(data=>data.filter(juego => juego.nombre == 'Adivina El Número')) ;
+      break;
+      case"Anagrama":
+        juegos= this.juego.TraerJugadas(ruta).map(data=>data.filter(juego => juego.nombre == 'Anagrama')) ;
       break;
       default:
         juegos= this.juego.TraerJugadas(ruta) ;

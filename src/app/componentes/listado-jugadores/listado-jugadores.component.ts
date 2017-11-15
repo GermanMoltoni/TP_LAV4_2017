@@ -8,7 +8,7 @@ import { validateConfig } from '@angular/router/src/config';
   styleUrls: ['./listado-jugadores.component.css'],
 })
 export class ListadoJugadoresComponent implements OnInit {
-  @Input() private jugadores;
+  @Input() public jugadores;
  
   constructor() { }
   settings = {

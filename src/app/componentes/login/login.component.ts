@@ -36,7 +36,8 @@ export class LoginComponent implements OnInit {
          
         localStorage.setItem("jugador",JSON.stringify(res.jugador));
         localStorage.setItem("token",res.token);
-        this.router.navigate(['juegos']);
+        this.router.navigate(['/juegos']);
+        
       }
     });
 

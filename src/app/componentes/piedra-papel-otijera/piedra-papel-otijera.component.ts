@@ -24,7 +24,6 @@ export class PiedraPapelOtijeraComponent implements OnInit {
     this.jugador = Jugador.getJugador();
     if(this.jugador != null){
     this.juego = new PiedraPapelOTijera('Piedra Papel O Tijera',this.jugador);
-    
     this.juego.GenerarNuevo();
     switch (opcion) {
       case 'piedra':
@@ -43,7 +42,6 @@ export class PiedraPapelOtijeraComponent implements OnInit {
   }
   Verificar(){
     this.juego.Verificar();
- 
     switch (this.juego.maquina) {
       case 1:
         this.img='./assets/piedra.jpg';

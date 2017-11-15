@@ -12,8 +12,9 @@ export class PiedraPapelOTijera  extends Juego{
         this.maquina = Math.floor(Math.random() * 3) + 1;
     }
     Verificar(){
-        this.GenerarNuevo();
-        this.gano = (this.maquina == this.opcion);
+        this.gano = (this.opcion ==  1 && this.maquina == 3) ||
+                    (this.opcion == 3 && this.maquina == 1) || 
+                    (this.opcion ==  3 && this.maquina == 2);
         this.fecha = (new Date()).toLocaleDateString("es");
     }
     ToObj(){

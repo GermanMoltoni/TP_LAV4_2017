@@ -15,7 +15,7 @@ export class RegistroJugadorComponent implements OnInit {
   public error:string='';
   public inputUsuario:FormControl = new FormControl('',[Validators.required]);
   public inputMail:FormControl = new FormControl('',[Validators.required,Validators.minLength(5),Validators.email]);
-  public inputPassword:FormControl = new FormControl('',[Validators.required,Validators.minLength(8)]);
+  public inputPassword:FormControl = new FormControl('',[Validators.required]);
   public radioSexo:FormControl = new FormControl('');
   public registroForm:FormGroup = this.builder.group({
     usuario : this.inputUsuario,
@@ -42,7 +42,7 @@ export class RegistroJugadorComponent implements OnInit {
         localStorage['jugador']=JSON.stringify(res.jugador);
         localStorage['token']=res.token;
         
-        this.router.navigate(['juegos']);
+        this.router.navigate(['/juegos']);
         
       }
     });
