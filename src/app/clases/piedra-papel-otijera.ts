@@ -13,7 +13,8 @@ export class PiedraPapelOTijera  extends Juego{
     }
     Verificar(){
         this.GenerarNuevo();
-        this.gano = (this.maquina == this.opcion)
+        this.gano = (this.maquina == this.opcion);
+        this.fecha = (new Date()).toLocaleDateString("es");
     }
     ToObj(){
         return {

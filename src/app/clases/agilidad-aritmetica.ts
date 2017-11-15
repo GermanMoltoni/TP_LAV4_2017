@@ -46,6 +46,6 @@ export class AgilidadAritmetica extends Juego{
     }
     Verificar(){
          this.gano = (this.nIngresado == this.resultado);
-            
+         this.fecha = (new Date()).toLocaleDateString("es");
     }
 }

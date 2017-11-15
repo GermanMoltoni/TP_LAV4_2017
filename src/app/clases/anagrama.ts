@@ -39,5 +39,6 @@ export class Anagrama extends Juego {
     }
     public Verificar(){
         this.gano = StringLib.check(this.cadena_secreta,this.respuesta);
+        this.fecha = (new Date()).toLocaleDateString("es");
     }
 }

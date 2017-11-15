@@ -38,7 +38,7 @@ export class JugadorService {
       if(jugador != null)
         obs.next({jugador:jugador,token:'',msg:null})
       else
-        obs.next({jugador:jugador,token:'',msg:'no se encuentra'})
+        obs.next({jugador:jugador,token:'',msg:'No se encuentra el Jugador'})
     });
   }
   TraerJugadoresLocal(){
@@ -65,11 +65,23 @@ export class JugadorService {
         {usuario:'Juan_cuatro',mail:'juan@test',sexo:'M',password:'123123123'},
       ];
     }
+    for(let i in listaJugadores){
+      if(listaJugadores[i].usuario == jugador.usuario || listaJugadores[i].mail ==  jugador.mail){
+        jugador=null;
+        break;
+      }
+    }
     listaJugadores.push(jug);
     localStorage['jugadores'] = JSON.stringify(listaJugadores);
     
-    return new Observable(obs => {
-      obs.next('registrado')
+    return new Observable<{jugador:Jugador,msg:string,token:string}>(obs => {
+      if(jugador != null){
+        jugador.password='';
+        obs.next({jugador:jugador,token:'',msg:null})
+        
+      }
+      else
+        obs.next({jugador:jugador,token:'',msg:"El usuario o mail se encuentran registrados"})
     });
   }
 }

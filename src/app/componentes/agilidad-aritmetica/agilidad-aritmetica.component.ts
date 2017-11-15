@@ -39,7 +39,7 @@ import { ChangeDetectorRef } from "@angular/core";
       transition(':leave', [
         animate(500, style({transform: 'translateX(-100%)'}))
       ])
-    ])
+    ]),
   ]
 })
 export class AgilidadAritmeticaComponent implements OnInit {
@@ -48,24 +48,24 @@ export class AgilidadAritmeticaComponent implements OnInit {
   public tiempoMaximo;
   public tiempo=60;
   public turnoJugador: boolean;
-  public estado: boolean = false;
   public tiempoInicio: Date;
   public tiempoUltimoJug;
+  public mensaje:boolean=true;
     @Output() enviarJuego:EventEmitter<Juego> =new EventEmitter<Juego>();
   public state;
   constructor() { 
-    let jugador = Jugador.getJugador();
-    this.juego = new AgilidadAritmetica('Agilidad Aritmética', jugador);
+    this.jugador = Jugador.getJugador();
+    this.juego = new AgilidadAritmetica('Agilidad Aritmética', this.jugador);
     this.state = ":enter";
   }
 
   ngOnInit() {
     this.tiempoMaximo = setInterval(() => { 
-          if (this.estado && new Date().getTime() - this.tiempoUltimoJug.getTime() >= 60000) {
-              this.estado = false;
+          if (this.juego.estado && new Date().getTime() - this.tiempoUltimoJug.getTime() >= 60000) {
+              this.juego.estado = false;
               this.Verificar();
           }
-          if(this.estado)
+          if(this.juego.estado)
             this.tiempo--;
   }, 1000);
   }
@@ -73,20 +73,20 @@ export class AgilidadAritmeticaComponent implements OnInit {
     clearInterval(this.tiempoMaximo);
 }
   GenerarNuevo(){
-    let jugador = Jugador.getJugador();
-    this.juego = new AgilidadAritmetica('Agilidad Aritmética',new Jugador('german','german','m'));
+    this.juego = new AgilidadAritmetica('Agilidad Aritmética',this.jugador);
     this.juego.GenerarNuevo();
     this.tiempoInicio = new Date();
-    this.estado = true;
+    this.juego.estado = true;
     this.tiempoUltimoJug = new Date();
     
      
    }
   Verificar(){
-    if(this.estado){
+    if(this.juego.estado){
       this.juego.Verificar();
+      this.mensaje=false;
       this.enviarJuego.emit(this.juego);
-      this.estado=false;
+      this.juego.estado=false;
       return;
     }
      

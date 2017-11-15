@@ -6,11 +6,14 @@ export  abstract class Juego {
     public puntaje:number;
     public jugador:Jugador;
     public tiempo;
-    public maxIntentos:number;
     public fecha:string;
+    public estado:boolean;
+    public turnoJugador:boolean;
     constructor(nombre:string,jugador:Jugador){
         this.nombre=nombre;
         this.gano=false;
+        this.estado=false;
+        this.turnoJugador=false;
         this.jugador = jugador;
     }
     public abstract  Verificar();

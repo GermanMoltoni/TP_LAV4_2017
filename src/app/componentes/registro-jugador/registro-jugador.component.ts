@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule, Validators,FormBuilder,FormControl,FormGroup }   from '@angular/forms';
 import {JugadorService} from '../../servicios/jugador/jugador.service';
 import {Jugador} from '../../clases/jugador';
+import { ActivatedRoute,Router }   from '@angular/router';//rutas
+
 
 @Component({
   selector: 'app-registro-jugador',
@@ -10,7 +12,7 @@ import {Jugador} from '../../clases/jugador';
   styleUrls: ['./registro-jugador.component.css']
 })
 export class RegistroJugadorComponent implements OnInit {
-
+  public error:string='';
   public inputUsuario:FormControl = new FormControl('',[Validators.required]);
   public inputMail:FormControl = new FormControl('',[Validators.required,Validators.minLength(5),Validators.email]);
   public inputPassword:FormControl = new FormControl('',[Validators.required,Validators.minLength(8)]);
@@ -21,7 +23,8 @@ export class RegistroJugadorComponent implements OnInit {
     password:this.inputPassword,
     sexo:this.radioSexo
   });
-  constructor(public builder:FormBuilder,public jugadorService: JugadorService) { }
+  constructor(public builder:FormBuilder,public jugadorService: JugadorService,public route: ActivatedRoute,
+    public router: Router) { }
 
   ngOnInit() {
   }
@@ -32,7 +35,17 @@ export class RegistroJugadorComponent implements OnInit {
     let password= this.registroForm.get('password').value;
     let sexo = this.registroForm.get('sexo').value;
     let jugador: Jugador = new Jugador(usuario,mail,sexo,password);
-    this.jugadorService.Crear('registro',jugador).subscribe(res=>{console.log(res)});
+    this.jugadorService.Crear('registro',jugador).subscribe(res=>{
+      if(res.msg != undefined && res.msg != null)
+        this.error = res.msg;
+      else{
+        localStorage['jugador']=JSON.stringify(res.jugador);
+        localStorage['token']=res.token;
+        
+        this.router.navigate(['juegos']);
+        
+      }
+    });
   }
  
 }

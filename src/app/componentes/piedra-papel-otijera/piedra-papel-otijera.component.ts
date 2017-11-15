@@ -21,9 +21,9 @@ export class PiedraPapelOtijeraComponent implements OnInit {
   }
 
   Jugar(opcion:string){
-    let jugador = Jugador.getJugador();
-    if(jugador != null){
-    this.juego = new PiedraPapelOTijera('Piedra Papel O Tijera',jugador);
+    this.jugador = Jugador.getJugador();
+    if(this.jugador != null){
+    this.juego = new PiedraPapelOTijera('Piedra Papel O Tijera',this.jugador);
     
     this.juego.GenerarNuevo();
     switch (opcion) {

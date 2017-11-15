@@ -7,8 +7,10 @@ export class AdivinaElNumero extends Juego{
     constructor(nombre:string,jugador:Jugador){
         super(nombre,jugador);   
     }
+
     Verificar(){
          this.gano = (this.numeroSecreto == this.nIngresado);
+         this.fecha = (new Date()).toLocaleDateString("es");
     }
     GenerarNuevo(){
         this.gano=false;

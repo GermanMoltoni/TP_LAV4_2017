@@ -34,13 +34,14 @@ export class SimonDiceComponent implements OnInit,OnDestroy {
     public turnoJugador: boolean;
     public estado: boolean = false;
     public tiempoInicio: Date;
+    public jugador:Jugador;
     public tiempoUltimoJug: Date;
     constructor() { }
 
     GenerarNuevo(){
-        let jugador = Jugador.getJugador();
-        if(jugador != null){
-            this.juego = new Simon('Simon Dice',jugador);
+        this.jugador = Jugador.getJugador();
+        if(this.jugador != null){
+            this.juego = new Simon('Simon Dice',this.jugador);
             this.juego.GenerarNuevo();
             this.ComenzarJuego()
         }
@@ -159,8 +160,8 @@ export class SimonDiceComponent implements OnInit,OnDestroy {
     public updateModel(gano = null) {
         if(gano != null){
             this.juego.gano=gano;
+            this.juego.fecha = (new Date()).toLocaleDateString("es");
             this.enviarJuego.emit(this.juego);
-            console.log(this.juego);
         }
  
    }

@@ -7,7 +7,9 @@
                     <div role="tabpanel" class="tab-pane active" id="do-signin">
                         <h3 class="text-center">Registro</h3>
                         <p class="text-center">
-                            <br> <br>
+                            <br>
+                            {{error}}
+                            <br>
                         </p>
                         <form [formGroup]='registroForm'class="form-signin" >
                             <div class="form-group">
@@ -18,16 +20,13 @@
                                 <label class="sr-only">Password <span class="text-danger">*</span></label>
                                 <input type="password"  [formControl]='inputPassword'class="form-control" placeholder="Password"  required>
                             </div>
-                            <div class="form-group">
-                                    <label class="sr-only">Reingresar Password <span class="text-danger">*</span></label>
-                                    <input type="password"   class="form-control" placeholder="Repetir Password" required>
-                                </div>
+                            
                                 <div class="form-group">
                                         <label class="sr-only">Mail <span class="text-danger">*</span></label>
                                         <input type="email"  class="form-control" [formControl]='inputMail' placeholder="Mail" required>
                                     </div>
                             <div class="form-group">
-                                    <button class="btn btn-block btn-action" [disabled]="!registroForm.valid" type="submit" (click)="onClick()">Registrar</button>
+                                    <button class="btn btn-block btn-round" [disabled]="!registroForm.valid" type="submit" (click)="onClick()">Registrar</button>
                                 </div>
                         </form>
                     </div>

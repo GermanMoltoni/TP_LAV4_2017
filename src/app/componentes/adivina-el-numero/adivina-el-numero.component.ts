@@ -58,7 +58,6 @@ export class AdivinaElNumeroComponent implements OnInit {
   public nIngresado:number;
   public state;
   public resultado:boolean=true;
-  public estadoJuego:boolean;
   @Output() enviarJuego:EventEmitter<Juego> =new EventEmitter<Juego>();
   constructor(public change :ChangeDetectorRef) { 
     let jugador = Jugador.getJugador();
@@ -71,12 +70,12 @@ export class AdivinaElNumeroComponent implements OnInit {
     let jugador = Jugador.getJugador();
     this.juego = new AdivinaElNumero('Adivina El Número',jugador);
     this.juego.GenerarNuevo();
-     this.estadoJuego=true;
+     this.juego.estado=true;
    }
   Verificar(){
-    if(this.estadoJuego){
+    if(this.juego.estado){
       this.juego.Verificar();
-       this.estadoJuego=false;
+       this.juego.estado=false;
      this.enviarJuego.emit(this.juego);
     }
      
