@@ -21,7 +21,6 @@ export class AnagramaMasListadoComponent implements OnInit {
   }
   capturaJuego(juego:Juego){
     this.juegoService.Guardar(juego.ToObj());
-    console.log(juego.ToObj())
     this.filtro.Filtrar(juego.nombre,'juegos').subscribe(datos=>{this.listadoParaCompartir = datos });
     
   }
