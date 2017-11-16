@@ -42,6 +42,9 @@ export class LoginComponent implements OnInit {
     });
 
   }
+  rellenar(){
+    this.registroForm.setValue({usuario:"carlos_uno",password:"123321123"});
+   }
 
 
 }
