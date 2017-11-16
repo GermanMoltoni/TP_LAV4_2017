@@ -25,13 +25,14 @@ public palabras:string[]=["programación","luz","auto","perro","día","juego","s
     
   }
   GenerarNuevo(){
+    this.juego.estado = false;
     this.clase=" text-center alert alert-info";
     this.juego = new Anagrama('Anagrama',this.jugador,this.palabras);
     this.juego.GenerarNuevo();
     this.juego.estado=true;
   }
   Verificar(){
-    if(this.juego.estado){
+    if(this.juego.estado &&  this.juego.gano == false){
       this.juego.respuesta = this.palabra;
       this.juego.Verificar();
       this.juego.cadena_juego = this.juego.cadena_secreta;
@@ -41,8 +42,8 @@ public palabras:string[]=["programación","luz","auto","perro","día","juego","s
       }
       else
         this.clase = " text-center alert alert-danger";
-      
-       this.juego.estado = false;
+      this.juego.gano=null;
+       
       this.enviarJuego.emit(this.juego);
     }
     
