@@ -69,8 +69,11 @@ export class AgilidadAritmeticaComponent implements OnInit {
     clearInterval(this.tiempoMaximo);
 }
   GenerarNuevo(){
-    this.tiempo = 60;
+    if(!this.juego.estado){
+   
     this.juego = new AgilidadAritmetica('Agilidad Aritmética',this.jugador);
+    this.tiempo=60;
+    }
     this.juego.GenerarNuevo();
     this.tiempoInicio = new Date();
     this.juego.estado = true;

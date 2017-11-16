@@ -1,28 +1,41 @@
- 
- 
-        <div class="  panel  "   >
-          <h2 class="text-center">{{juego.nombre}}</h2>
-          <div class="row">
-            <h4 class="text-center">{{juego.cadena_juego}}</h4>
-          </div>
-          <div class="row">
-                   <div class="form-group  "   >
-                           <div class="col-md-2"></div>
-                       <div class="col-md-4 "  >
-                          <label >Respuesta
-                          <input  class="form-control" name='num' type="text" [(ngModel)]='palabra'/></label>
-                      </div>
-                      <div class="col-md-3" [hidden]='true  ' >
-                              <label [hidden]='false'>Palabra Correcta</label>
-                              <p class="text-center" [hidden]='false'><strong>{{juego.cadena_secreta}}</strong></p>
-                      </div>
-                      </div>
-          </div>
-             
-              <div class="form-group text-center">
-                      <button mat-raised-button class="btn btn-lg"(click)='GenerarNuevo()' >Nuevo</button>
-                      <button mat-raised-button   class="btn  btn-lg" (click)='Verificar()' >Verificar</button>
-              </div>     
-              
-      </div>
+<div class="  panel  "   >
+    <h2 class="text-center">{{juego.nombre}}</h2>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-4 col-xs-4 col-sm-4"></div>
+        <div class="col-md-4 col-xs-4 col-sm-4">
+            <h4 [className]="clase" [hidden]="!juego.estado" ><strong>{{juego.cadena_juego}}</strong></h4>            
+        </div>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 "  >
+                <input  class="form-control"   placeholder="Respuesta" type="text" [(ngModel)]='palabra'/>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-4"></div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <h4 class="text-center" [hidden]="!juego.gano">Ganaste!!!</h4>
+            </div>
+            
+        </div>
+    <div class="row">&nbsp;</div>
+    
+    <div class="row">
+        <div class="col-md-4 col-xs-4 col-sm-4"></div>
+        <div class="col-md-4 col-xs-4 col-sm-4"  >
+                <mat-chip-list >
+                        
+                                  <mat-chip color="primary" selected=true (click)='GenerarNuevo()' >Nuevo</mat-chip>
+                                  <mat-chip color="accent"   selected=true (click)='Verificar()'>Verificar</mat-chip>
+                                </mat-chip-list>
+        </div>
+           
+    </div>       
+</div>      
 
