@@ -29,7 +29,8 @@ export class Simon extends Juego{
             jugador:this.jugador.toObj(),
             nombre:this.nombre,
             gano:this.gano,
-            puntaje:this.puntaje
+            puntaje:this.puntaje,
+            fecha : this.fecha
         }
     }
 }

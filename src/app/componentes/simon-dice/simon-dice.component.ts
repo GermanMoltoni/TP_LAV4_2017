@@ -41,6 +41,7 @@ export class SimonDiceComponent implements OnInit,OnDestroy {
     GenerarNuevo(){
         this.jugador = Jugador.getJugador();
         if(this.jugador != null){
+            this.padState = ['inactive', 'inactive', 'inactive', 'inactive'];
             this.juego = new Simon('Simon Dice',this.jugador);
             this.juego.GenerarNuevo();
             this.ComenzarJuego()
@@ -121,10 +122,19 @@ export class SimonDiceComponent implements OnInit,OnDestroy {
             this.flash(idPad).then(() => {
                  
                 if (this.juego.Verificar()) {
+                    this.padState = ['inactive', 'active', 'active', 'inactive'];
+                    setTimeout(() => {
+                        this.padState = ['inactive', 'inactive', 'inactive', 'inactive'];
+                       }, 2000); 
+  
                     this.TerminarJuego(false);
                     return;
                 }
-                if(this.juego.turno == 3){
+                if(this.juego.turno == 4){
+                    this.padState = ['active', 'active', 'active', 'active'];
+                    setTimeout(() => {
+                        this.padState = ['inactive', 'inactive', 'inactive', 'inactive'];
+                       }, 2000); 
                     this.TerminarJuego(true);
                     return;
                 }
