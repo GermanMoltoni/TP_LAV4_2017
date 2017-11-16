@@ -1,4 +1,4 @@
-<table class="table table-condensed" >
+<!--<table class="table table-condensed" >
     <thead class="bg-danger">
         <tr>
           
@@ -30,4 +30,41 @@
 
 thead > tr, tbody{
     display:block;}
-</style>
+</style>-->
+<div class="example-container mat-elevation-z8" style="background-color:aliceblue">
+        <div class="example-header">
+          <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+          </mat-form-field>
+        </div>
+      
+        <mat-table #table [dataSource]="listado">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef>Usuario </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{juego.jugador.usuario}} </mat-cell>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Resultado </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{juego.gano | puntaje}} </mat-cell>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="weight">
+            <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{juego.fecha}} </mat-cell>
+          </ng-container>
+      
+          <!-- Color Column
+          <ng-container matColumnDef="symbol">
+            <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+          </ng-container> -->
+      
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>

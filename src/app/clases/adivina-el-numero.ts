@@ -14,14 +14,15 @@ export class AdivinaElNumero extends Juego{
     }
     GenerarNuevo(){
         this.gano=false;
-        this.numeroSecreto = Math.round(Math.random()*100);
+        this.numeroSecreto = Math.round(Math.random()*10);
      }
      ToObj(){
         return {
             jugador:this.jugador.toObj(),
             nombre:this.nombre,
             gano:this.gano,
-            puntaje:null
+            puntaje:null,
+            fecha:this.fecha
         }
     }
 }

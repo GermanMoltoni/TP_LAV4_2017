@@ -25,6 +25,10 @@
                                         <label class="sr-only">Mail <span class="text-danger">*</span></label>
                                         <input type="email"  class="form-control" [formControl]='inputMail' placeholder="Mail" required>
                                     </div>
+                                    <mat-radio-group>
+                                            <mat-radio-button value="1">Option 1</mat-radio-button>
+                                            <mat-radio-button value="2">Option 2</mat-radio-button>
+                                          </mat-radio-group>
                             <div class="form-group">
                                     <button class="btn btn-block btn-round" [disabled]="!registroForm.valid" type="submit" (click)="onClick()">Registrar</button>
                                 </div>
