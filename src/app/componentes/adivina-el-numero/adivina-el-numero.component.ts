@@ -21,26 +21,8 @@ import { ChangeDetectorRef } from "@angular/core";
         animate(500, style({transform: 'translateX(-100%)'}))
       ])
     ]),
-    trigger('entradainput', [
-      state('in', style({transform: 'translateX(0)'})),
-      transition(':enter', [
-        style({transform: 'translateX(-100%)'}),
-        animate(500)
-      ]),
-      transition(':leave', [
-        animate(500, style({transform: 'translateX(-100%)'}))
-      ])
-    ]),
-    trigger('entradasecre', [
-      state('in', style({transform: 'translateX(0)'})),
-      transition(':enter', [
-        style({transform: 'translateX(-100%)'}),
-        animate(500)
-      ]),
-      transition(':leave', [
-        animate(500, style({transform: 'translateX(-100%)'}))
-      ])
-    ]),
+ 
+ 
     trigger('entradabtn', [
       state('in', style({transform: 'translateX(0)'})),
       transition(':enter', [

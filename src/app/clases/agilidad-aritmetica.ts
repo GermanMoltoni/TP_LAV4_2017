@@ -15,7 +15,8 @@ export class AgilidadAritmetica extends Juego{
             jugador:this.jugador.toObj(),
             nombre:this.nombre,
             gano:this.gano,
-            puntaje:null
+            puntaje:null,
+            fecha:this.fecha
         }
     }
     GenerarNuevo(){
@@ -32,7 +33,7 @@ export class AgilidadAritmetica extends Juego{
                 this.operador = '-';
                 break;
             case 3:
-                this.resultado = this.numUno/this.numDos;
+                this.resultado =  parseInt((this.numUno/this.numDos).toFixed(2));
                 this.operador = '/';
                 break;
             case 4:
@@ -42,7 +43,6 @@ export class AgilidadAritmetica extends Juego{
             default:
                 break;
         }
-        this.tiempo=new Date();
     }
     Verificar(){
          this.gano = (this.nIngresado == this.resultado);

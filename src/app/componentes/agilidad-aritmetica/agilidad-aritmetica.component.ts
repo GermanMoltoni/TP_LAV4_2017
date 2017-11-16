@@ -20,16 +20,8 @@ import { ChangeDetectorRef } from "@angular/core";
         animate(500, style({transform: 'translateX(-100%)'}))
       ])
     ]),
-    trigger('entradainput', [
-      state('in', style({transform: 'translateX(0)'})),
-      transition(':enter', [
-        style({transform: 'translateX(-100%)'}),
-        animate(500)
-      ]),
-      transition(':leave', [
-        animate(500, style({transform: 'translateX(-100%)'}))
-      ])
-    ]),
+ 
+ 
     trigger('entradabtn', [
       state('in', style({transform: 'translateX(0)'})),
       transition(':enter', [
@@ -39,7 +31,7 @@ import { ChangeDetectorRef } from "@angular/core";
       transition(':leave', [
         animate(500, style({transform: 'translateX(-100%)'}))
       ])
-    ]),
+    ])
   ]
 })
 export class AgilidadAritmeticaComponent implements OnInit {
@@ -51,6 +43,9 @@ export class AgilidadAritmeticaComponent implements OnInit {
   public tiempoInicio: Date;
   public tiempoUltimoJug;
   public mensaje:boolean=true;
+  public alertaGano:boolean=false;
+  public alertaPerdio:boolean=false;
+  public resultado:boolean=true;
     @Output() enviarJuego:EventEmitter<Juego> =new EventEmitter<Juego>();
   public state;
   constructor() { 
@@ -62,8 +57,9 @@ export class AgilidadAritmeticaComponent implements OnInit {
   ngOnInit() {
     this.tiempoMaximo = setInterval(() => { 
           if (this.juego.estado && new Date().getTime() - this.tiempoUltimoJug.getTime() >= 60000) {
-              this.juego.estado = false;
+             
               this.Verificar();
+              this.juego.estado = false;
           }
           if(this.juego.estado)
             this.tiempo--;
@@ -73,18 +69,25 @@ export class AgilidadAritmeticaComponent implements OnInit {
     clearInterval(this.tiempoMaximo);
 }
   GenerarNuevo(){
+    this.tiempo = 60;
     this.juego = new AgilidadAritmetica('Agilidad Aritmética',this.jugador);
     this.juego.GenerarNuevo();
     this.tiempoInicio = new Date();
     this.juego.estado = true;
     this.tiempoUltimoJug = new Date();
+    this.alertaGano=false;
+    this.alertaPerdio=false;
     
      
    }
   Verificar(){
     if(this.juego.estado){
       this.juego.Verificar();
-      this.mensaje=false;
+      if(this.juego.gano){
+        this.alertaGano=true;
+      }
+      else
+        this.alertaPerdio=true;
       this.enviarJuego.emit(this.juego);
       this.juego.estado=false;
       return;

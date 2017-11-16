@@ -1,34 +1,43 @@
-
- 
 <div class="  panel  " [@entrada]="state"  >
+    <h2 class="text-center">Agilidad Aritmética</h2>
+    <div class="row">&nbsp;</div>
     
-        <h2 class="text-center">Agilidad Aritmética</h2>
-        <div class="row">
-                 <div class="form-group  "  [@entradabtn]="state" >
-                     <div class="col-md-1"></div>
-                     <div class="col-md-2"  >
-                            
-                        <input  class="form-control" readonly name='numUno' type="text" [ngModel]='juego.numUno'/>
-                    </div>
-                    <div class="col-md-1 "  >
-                            <input  class="form-control" readonly name='oper' type="text" [ngModel]='juego.operador'/>
-                        </div>
-                    
-                    <div class="col-md-2  "  >
-                            
-                            <input  class="form-control" readonly name='numDos' type="text" [(ngModel)]='juego.numDos'/>
-                        </div>
-                        <div class="col-md-1  " ><img src="./assets/igual.png"></div>
-                        <div class="col-md-2  "  >
-                                <input  class="form-control" name='ingreso' type="text" [(ngModel)]='juego.nIngresado'/>
-                            </div>
-                        </div>
-                  
-        </div>
-           
-            <div class="form-group text-center" [@entradabtn]="state" style="margin:10px 0px;">
-                    <button mat-raised-button class="btn btn-lg" (click)='GenerarNuevo()' >Nuevo</button>
-                    <button mat-raised-button class="btn btn-lg" (click)='Verificar()' >Verificar</button>
-             </div>     
-            
+    <div class="row">
+        <div class="form-group  "  [@entradabtn]="state" >
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+                <input  class="form-control" readonly name='numUno' type="text" [ngModel]='juego.numUno'/>
+            </div>
+            <div class="col-md-1 ">
+                <h4 class="text-center">{{juego.operador}}</h4> 
+            </div>
+            <div class="col-md-2">
+                <input  class="form-control" readonly name='numDos' type="text" [(ngModel)]='juego.numDos'/>
+            </div>
+            <div class="col-md-1  " ><img src="./assets/igual.png"></div>
+            <div class="col-md-2  "  >
+                <input  class="form-control" name='ingreso' type="text" [(ngModel)]='juego.nIngresado'/>
+            </div>
+        </div>       
     </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <h4 class="text-center">{{tiempo}}</h4>
+    </div>
+    <div class="form-group text-center" [@entradabtn]="state" style="margin:10px 0px;">
+        <button mat-raised-button color="primary" class="btn btn-lg" (click)='GenerarNuevo()' >Nuevo</button>
+        <button  mat-raised-button color="accent" (click)='Verificar()' >Verificar</button>
+    </div> 
+    <div class="row">
+        <div class="col-md-4 col-xs-4 col-sm-4"></div>
+            <div class="col-md-4 text-center" [@entradabtn]="state">
+                <h4 class="alert alert-success" [hidden]="!alertaGano">Ganaste el juego!!</h4>
+                <h4 class="alert alert-danger" [hidden]="!alertaPerdio">Perdiste!!<br>
+                Resultado : {{juego.resultado}}
+                </h4>
+            </div>
+    </div>  
+    <div class="row">
+    <h4 class="text-center"><strong>Resolvé la operación antes de que se termine el tiempo!</strong></h4>    
+    </div>     
+</div>

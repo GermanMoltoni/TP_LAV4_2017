@@ -5,7 +5,7 @@
             <div class="col-md-2 col-sm-2 col-xs-2"></div>
             <div class="col-md-4 col-sm-4 col-xs-4 text-center"  >
                 <label for='num'>Numero Ingresado</label>
-                <input  class="form-control" name='num' type="text" [(ngModel)]='juego.nIngresado'/>
+                <input  class="form-control" name='num' type="text" [disabled]="!juego.estado" [(ngModel)]='juego.nIngresado'/>
             </div>
             <div class="col-md-3"  >
                 <label [hidden]='!alertaPerdio'>Número Secreto</label>

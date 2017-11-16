@@ -30,7 +30,8 @@ export class Anagrama extends Juego {
             jugador:this.jugador.toObj(),
             nombre:this.nombre,
             gano:this.gano,
-            puntaje:null
+            puntaje:null,
+            fecha:this.fecha
         }
     }
     public GenerarNuevo(){

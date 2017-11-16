@@ -32,30 +32,26 @@ thead > tr, tbody{
     display:block;}
 </style>-->
 <div class="example-container mat-elevation-z8" style="background-color:aliceblue">
-        <div class="example-header">
-          <mat-form-field>
-            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-          </mat-form-field>
-        </div>
+ 
       
-        <mat-table #table [dataSource]="listado">
+        <mat-table   [dataSource]="dataSource">
       
           <!-- Position Column -->
-          <ng-container matColumnDef="position">
+          <ng-container matColumnDef="usuario">
             <mat-header-cell *matHeaderCellDef>Usuario </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{juego.jugador.usuario}} </mat-cell>
+            <mat-cell *matCellDef="let element"> {{element.jugador}} </mat-cell>
           </ng-container>
       
           <!-- Name Column -->
-          <ng-container matColumnDef="name">
+          <ng-container matColumnDef="gano">
             <mat-header-cell *matHeaderCellDef> Resultado </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{juego.gano | puntaje}} </mat-cell>
+            <mat-cell *matCellDef="let element"> {{element  | puntaje}} </mat-cell>
           </ng-container>
       
           <!-- Weight Column -->
-          <ng-container matColumnDef="weight">
+          <ng-container matColumnDef="fecha">
             <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{juego.fecha}} </mat-cell>
+            <mat-cell *matCellDef="let element"> {{element}} </mat-cell>
           </ng-container>
       
           <!-- Color Column
