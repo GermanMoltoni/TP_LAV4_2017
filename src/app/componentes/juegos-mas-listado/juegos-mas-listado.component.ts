@@ -20,3 +20,4 @@ export class JuegosMasListadoComponent implements OnInit {
       this.filtro.Filtrar(opcion,'juegos').subscribe(datos=>{this.juegos = new LocalDataSource(datos) });
   }
 }
+

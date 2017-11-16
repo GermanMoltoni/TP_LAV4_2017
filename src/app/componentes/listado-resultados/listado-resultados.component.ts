@@ -1,6 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
 import {Juego} from '../../clases/juego'
-import {MatTableDataSource} from '@angular/material';
 
 @Component({  
   selector: 'app-listado-resultados',

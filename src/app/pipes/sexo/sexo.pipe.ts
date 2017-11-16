@@ -13,3 +13,4 @@ export class SexoPipe implements PipeTransform {
   }
 
 }
+

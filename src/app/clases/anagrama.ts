@@ -43,3 +43,4 @@ export class Anagrama extends Juego {
         this.fecha = (new Date()).toLocaleDateString("es");
     }
 }
+

@@ -1,26 +1,25 @@
- <table class="table table-condensed table_overflow" >
-    <thead  >
-        <tr>
-          
-            <th>Usuario</th>
-            <th>Fecha</th>
-            <th>Resultado</th>
-            
-            <th [hidden]='listado == null || listado[0] == undefined || listado[0].puntaje == undefined || listado[0].puntaje ==null'>Puntaje</th>
-        </tr>
-    </thead>
-    <tbody  id="body" style="background-color:white;">
+<table class="table table-condensed table_overflow" >
+  <thead  >
+      <tr>
         
-      <tr  *ngFor='let juego of listado'>
-         
-                <td>{{juego.jugador.usuario}}</td>
-                <td>{{juego.fecha}}</td>
-                
-        <td>{{juego.gano | resultado}}</td>
-        <td [hidden]='juego.puntaje | puntaje'>{{juego.puntaje}}</td>
+          <th>Usuario</th>
+          <th>Fecha</th>
+          <th>Resultado</th>
+          
+          <th [hidden]='listado == null || listado[0] == undefined || listado[0].puntaje == undefined || listado[0].puntaje ==null'>Puntaje</th>
       </tr>
-    </tbody>
+  </thead>
+  <tbody  id="body" style="background-color:white;">
+      
+    <tr  *ngFor='let juego of listado'>
+       
+              <td>{{juego.jugador.usuario}}</td>
+              <td>{{juego.fecha}}</td>
+              
+      <td>{{juego.gano | resultado}}</td>
+      <td [hidden]='juego.puntaje | puntaje'>{{juego.puntaje}}</td>
+    </tr>
+  </tbody>
 
 </table>
- 
- 
+

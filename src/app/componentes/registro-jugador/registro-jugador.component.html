@@ -1,44 +1,44 @@
 
 <div class="head-default">
-<div class="section section-signin">
-        <div class="panel panel-default">
-            <div class="panel-body" role="tabpanel">
-                <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="do-signin">
-                        <h3 class="text-center">Registro</h3>
-                        <p class="text-center">
-                            <br>
-                            {{error}}
-                            <br>
-                        </p>
-                        <form [formGroup]='registroForm'class="form-signin" >
-                            <div class="form-group">
-                                <label class="sr-only" >Usuario <span class="text-danger">*</span></label>
-                                <input type="text"   [formControl]='inputUsuario' class="form-control" placeholder="Usuario" required autofocus>
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only">Password <span class="text-danger">*</span></label>
-                                <input type="password"  [formControl]='inputPassword'class="form-control" placeholder="Password"  required>
-                            </div>
-                            
-                                <div class="form-group">
-                                        <label class="sr-only">Mail <span class="text-danger">*</span></label>
-                                        <input type="email"  class="form-control" [formControl]='inputMail' placeholder="Mail" required>
-                                    </div>
-                                    <mat-radio-group [formControl]="radioSexo">
-                                            <mat-radio-button   value="F">F</mat-radio-button>
-                                            <mat-radio-button   value="M">M</mat-radio-button>
-                                          </mat-radio-group>
-                            <div class="form-group">
-                                    <button class="btn btn-block btn-round" [disabled]="!registroForm.valid" type="submit" (click)="onClick()">Registrar</button>
-                                </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="toggler text-center small list-unstyled">
-                        <p>¿Ya tienes una Cuenta? <a routerLink="/login" >Ingresar</a></p>
-                     </div>
-            </div>
-        </div>
-    </div>
-</div>
+  <div class="section section-signin">
+          <div class="panel panel-default">
+              <div class="panel-body" role="tabpanel">
+                  <div class="tab-content">
+                      <div role="tabpanel" class="tab-pane active" id="do-signin">
+                          <h3 class="text-center">Registro</h3>
+                          <p class="text-center">
+                              <br>
+                              {{error}}
+                              <br>
+                          </p>
+                          <form [formGroup]='registroForm'class="form-signin" >
+                              <div class="form-group">
+                                  <label class="sr-only" >Usuario <span class="text-danger">*</span></label>
+                                  <input type="text"   [formControl]='inputUsuario' class="form-control" placeholder="Usuario" required autofocus>
+                              </div>
+                              <div class="form-group">
+                                  <label class="sr-only">Password <span class="text-danger">*</span></label>
+                                  <input type="password"  [formControl]='inputPassword'class="form-control" placeholder="Password"  required>
+                              </div>
+                              
+                                  <div class="form-group">
+                                          <label class="sr-only">Mail <span class="text-danger">*</span></label>
+                                          <input type="email"  class="form-control" [formControl]='inputMail' placeholder="Mail" required>
+                                      </div>
+                                      <mat-radio-group [formControl]="radioSexo">
+                                              <mat-radio-button   value="F">F</mat-radio-button>
+                                              <mat-radio-button   value="M">M</mat-radio-button>
+                                            </mat-radio-group>
+                              <div class="form-group">
+                                      <button class="btn btn-block btn-round" [disabled]="!registroForm.valid" type="submit" (click)="onClick()">Registrar</button>
+                                  </div>
+                          </form>
+                      </div>
+                  </div>
+                  <div class="toggler text-center small list-unstyled">
+                          <p>¿Ya tienes una Cuenta? <a routerLink="/login" >Ingresar</a></p>
+                       </div>
+              </div>
+          </div>
+      </div>
+  </div>

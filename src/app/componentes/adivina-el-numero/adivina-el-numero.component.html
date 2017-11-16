@@ -1,34 +1,33 @@
 <div class="  panel  " [@entrada]="state"  >
-    <h2 class="text-center">Adivina El Número</h2>
-    <div class="row">
-        <div class="form-group  "  [@entradabtn]="state" >
-            <div class="col-md-2 col-sm-2 col-xs-2"></div>
-            <div class="col-md-4 col-sm-4 col-xs-4 text-center"  >
-                <label for='num'>Numero Ingresado</label>
-                <input  class="form-control" name='num' type="text" [disabled]="!juego.estado" [(ngModel)]='juego.nIngresado'/>
-            </div>
-            <div class="col-md-3"  >
-                <label [hidden]='!alertaPerdio'>Número Secreto</label>
-                <p class="text-center " [hidden]='!alertaPerdio'><strong>{{juego.numeroSecreto}}</strong></p>
-            </div>
-        </div>
-    </div>
-    <div class="row">&nbsp;</div>
-    <div class="form-group text-center" [@entradabtn]="state">
-        <button mat-raised-button  (click)='GenerarNuevo()' mat-button color="warn" >Nuevo</button>
-        <button mat-raised-button     (click)='Verificar()' [disabled]="!juego.estado">Verificar</button>
-    </div> 
-    <div class="row">
-        <div class="col-md-4 col-xs-4 col-sm-4"></div>
-            <div class="col-md-4 text-center" [@entradabtn]="state">
-                <h4 class="alert alert-success" [hidden]="!alertaGano">Ganaste el juego!!</h4>
-                <h4 class="alert alert-danger" [hidden]="!alertaPerdio">Perdiste!!</h4>
-            </div>
-    </div>  
-    <div class="row">
-    <h4 class="text-center"><strong>Ingresá un número entre 1 y 10 y desafiá a la máquina</strong></h4>    
-    </div>  
+  <h2 class="text-center">Adivina El Número</h2>
+  <div class="row">
+      <div class="form-group  "  [@entradabtn]="state" >
+          <div class="col-md-2 col-sm-2 col-xs-2"></div>
+          <div class="col-md-4 col-sm-4 col-xs-4 text-center"  >
+              <label for='num'>Numero Ingresado</label>
+              <input  class="form-control" name='num' type="text" [disabled]="!juego.estado" [(ngModel)]='juego.nIngresado'/>
+          </div>
+          <div class="col-md-3"  >
+              <label [hidden]='!alertaPerdio'>Número Secreto</label>
+              <p class="text-center " [hidden]='!alertaPerdio'><strong>{{juego.numeroSecreto}}</strong></p>
+          </div>
+      </div>
+  </div>
+  <div class="row">&nbsp;</div>
+  <div class="form-group text-center" [@entradabtn]="state">
+      <button mat-raised-button  (click)='GenerarNuevo()' mat-button color="warn" >Nuevo</button>
+      <button mat-raised-button     (click)='Verificar()' [disabled]="!juego.estado">Verificar</button>
+  </div> 
+  <div class="row">
+      <div class="col-md-4 col-xs-4 col-sm-4"></div>
+          <div class="col-md-4 text-center" [@entradabtn]="state">
+              <h4 class="alert alert-success" [hidden]="!alertaGano">Ganaste el juego!!</h4>
+              <h4 class="alert alert-danger" [hidden]="!alertaPerdio">Perdiste!!</h4>
+          </div>
+  </div>  
+  <div class="row">
+  <h4 class="text-center"><strong>Ingresá un número entre 1 y 10 y desafiá a la máquina</strong></h4>    
+  </div>  
 </div>
- 
 
- 
+
