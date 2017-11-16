@@ -16,19 +16,19 @@ export class FiltrarJuegosService {
         juegos= this.juego.TraerJugadas(ruta).map(data=>data.filter(juego => juego.gano == false)) ;
       break;
       case"Simon Dice":
-      juegos= this.juego.TraerJugadas(ruta).map(data=>data.filter(juego => juego.nombre == 'Simon Dice')) ;
+      juegos= this.juego.TraerJugadas(ruta).map(data=>data.filter(juego => juego.nombre === 'Simon Dice')) ;
       break;
       case"Agilidad Aritmética":
-      juegos= this.juego.TraerJugadas(ruta).map(data=>data.filter(juego => juego.nombre == 'Agilidad Aritmetica')) ;
+      juegos= this.juego.TraerJugadas(ruta).map(data=>data.filter(juego => juego.nombre === 'Agilidad Aritmética')) ;
       break;
-      case"Piedra Papel o Tijera":
-      juegos= this.juego.TraerJugadas(ruta).map(data=>data.filter(juego => juego.nombre == 'Piedra Papel o Tijera')) ;
+      case"Piedra Papel O Tijera":
+      juegos= this.juego.TraerJugadas(ruta).map(data=>data.filter(juego => juego.nombre === 'Piedra Papel O Tijera')) ;
       break;
       case"Adivina El Número":
-        juegos= this.juego.TraerJugadas(ruta).map(data=>data.filter(juego => juego.nombre == 'Adivina El Número')) ;
+        juegos= this.juego.TraerJugadas(ruta).map(data=>data.filter(juego => juego.nombre === 'Adivina El Número')) ;
       break;
       case"Anagrama":
-        juegos= this.juego.TraerJugadas(ruta).map(data=>data.filter(juego => juego.nombre == 'Anagrama')) ;
+        juegos= this.juego.TraerJugadas(ruta).map(data=>data.filter(juego => juego.nombre === 'Anagrama')) ;
       break;
       default:
         juegos= this.juego.TraerJugadas(ruta) ;

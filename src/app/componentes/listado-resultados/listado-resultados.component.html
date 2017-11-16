@@ -1,66 +1,26 @@
-<!--<table class="table table-condensed" >
-    <thead class="bg-danger">
+ <table class="table table-condensed table_overflow" >
+    <thead  >
         <tr>
           
             <th>Usuario</th>
+            <th>Fecha</th>
             <th>Resultado</th>
+            
             <th [hidden]='listado == null || listado[0] == undefined || listado[0].puntaje == undefined || listado[0].puntaje ==null'>Puntaje</th>
         </tr>
     </thead>
-    <tbody   style="background-color:white;">
+    <tbody  id="body" style="background-color:white;">
         
       <tr  *ngFor='let juego of listado'>
          
                 <td>{{juego.jugador.usuario}}</td>
-
+                <td>{{juego.fecha}}</td>
+                
         <td>{{juego.gano | resultado}}</td>
         <td [hidden]='juego.puntaje | puntaje'>{{juego.puntaje}}</td>
       </tr>
     </tbody>
 
 </table>
-<style>
-  tbody {
  
-    height: 100px;
-    overflow: auto;
-    width:100%;
-}
  
-
-thead > tr, tbody{
-    display:block;}
-</style>-->
-<div class="example-container mat-elevation-z8" style="background-color:aliceblue">
- 
-      
-        <mat-table   [dataSource]="dataSource">
-      
-          <!-- Position Column -->
-          <ng-container matColumnDef="usuario">
-            <mat-header-cell *matHeaderCellDef>Usuario </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.jugador}} </mat-cell>
-          </ng-container>
-      
-          <!-- Name Column -->
-          <ng-container matColumnDef="gano">
-            <mat-header-cell *matHeaderCellDef> Resultado </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element  | puntaje}} </mat-cell>
-          </ng-container>
-      
-          <!-- Weight Column -->
-          <ng-container matColumnDef="fecha">
-            <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element}} </mat-cell>
-          </ng-container>
-      
-          <!-- Color Column
-          <ng-container matColumnDef="symbol">
-            <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
-          </ng-container> -->
-      
-          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-        </mat-table>
-      </div>

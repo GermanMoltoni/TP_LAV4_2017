@@ -42,7 +42,7 @@ public palabras:string[]=["programación","luz","auto","perro","día","juego","s
       else
         this.clase = " text-center alert alert-danger";
       
-       
+       this.juego.estado = false;
       this.enviarJuego.emit(this.juego);
     }
     

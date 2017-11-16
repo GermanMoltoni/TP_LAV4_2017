@@ -1,6 +1,11 @@
  
-  <h1 style="margin:4% 0px 0px 32%;  color:aliceblue">Simon Dice</h1>
-  <div class="back" style="margin:6% 0px 0px 30%; zoom: 0.5;-moz-transform: scale(0.5);" >
+<div class="row">
+    <h1 class="text-center"style="   color:aliceblue">Simon Dice</h1>
+    
+    <h4 class="text-center" style="   color:aliceblue"><strong>Recordá la secuencia de luces!</strong></h4>    
+</div>
+<div class="row">
+  <div class="back" style="margin:6% 0px 0px 30%; zoom: 0.5;  " >
     <a class="pad shape1" [@padState]="padState[0]"  (click)="VerificarJugada(0)"></a>
     <a class="pad shape2"  [@padState]="padState[1]" (click)="VerificarJugada(1)"></a>
     <a class="pad shape3" [@padState]="padState[2]" (click)="VerificarJugada(2)"></a>
@@ -8,7 +13,10 @@
     <div class="circle"> 
       <button mat-raised-button color="warn" style="margin:38% 0px 0px 22%; zoom: 1.5;-moz-transform: scale(0.5);"  (click)="GenerarNuevo()">Comenzar</button>
     </div>
+
 </div>
+</div>
+
  
 
  

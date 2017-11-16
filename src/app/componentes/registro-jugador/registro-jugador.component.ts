@@ -16,7 +16,7 @@ export class RegistroJugadorComponent implements OnInit {
   public inputUsuario:FormControl = new FormControl('',[Validators.required]);
   public inputMail:FormControl = new FormControl('',[Validators.required,Validators.minLength(5),Validators.email]);
   public inputPassword:FormControl = new FormControl('',[Validators.required]);
-  public radioSexo:FormControl = new FormControl('');
+  public radioSexo:FormControl = new FormControl('',[Validators.required]);
   public registroForm:FormGroup = this.builder.group({
     usuario : this.inputUsuario,
     mail: this.inputMail,

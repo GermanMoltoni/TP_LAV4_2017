@@ -14,7 +14,7 @@ export class MenuJuegosComponent implements OnInit {
   ngOnInit() {
   }
   logout(){
-    localStorage.clear();
+    localStorage.removeItem('jugador');
     this.router.navigate(['/']);
     
   }

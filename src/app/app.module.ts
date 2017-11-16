@@ -23,6 +23,7 @@ import { FormsModule,ReactiveFormsModule}   from '@angular/forms';
 import {MatCardModule,MatSelectModule,MatInputModule,MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatMenuModule} from '@angular/material/menu';
 
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import {MatRadioModule} from '@angular/material/radio';
@@ -98,7 +99,7 @@ import { AnagramaMasListadoComponent } from './componentes/anagrama-mas-listado/
   ],
   imports: [
     BrowserModule,Ng2SmartTableModule,FormsModule,RutasModule,ReactiveFormsModule,HttpModule,BrowserAnimationsModule,
-    MatCardModule,MatSelectModule,MatInputModule,MatButtonModule, MatCheckboxModule,MatTableModule,MatChipsModule
+    MatCardModule,MatSelectModule,MatInputModule,MatButtonModule, MatCheckboxModule,MatTableModule,MatChipsModule,MatMenuModule,MatRadioModule
   ],
   providers: [MiHttpService,JugadorService,FiltrarJuegosService,JuegoService],
   bootstrap: [AppComponent],

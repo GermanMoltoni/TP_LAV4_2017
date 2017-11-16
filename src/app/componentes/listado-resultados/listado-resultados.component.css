@@ -1,21 +1,73 @@
-/* Structure */
-.example-container {
-    display: flex;
-    flex-direction: column;
-    min-width: 300px;
-  }
-  
-  .example-header {
-    min-height: 64px;
-    padding: 8px 24px 0;
-  }
-  
-  .mat-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
-  
-  .mat-table {
-    overflow: auto;
-    max-height: 500px;
-  }
+.table_overflow thead{
+  background-color:#9cd7fa;
+  border-bottom:#a5a5a5 2px solid;
+}
+.table_overflow tbody {
+  max-height:400px;
+  overflow-x:auto;
+  overflow-y:scroll;
+}
+.table_overflow thead, .table_overflow tbody{
+  float:left;
+  width:100%;
+}
+.table_overflow thead .th_1{
+  width:400px;
+}
+ 
+.table_overflow tbody tr td:nth-child(1){
+  width:400px;
+}
+ 
+.table_overflow thead .th_2{
+  width:200px;
+}
+ 
+.table_overflow tbody tr td:nth-child(2){
+  width:200px;
+}
+ 
+.table_overflow thead .th_3{
+  width:200px;
+}
+ 
+.table_overflow tbody tr td:nth-child(3){
+  width:200px;
+}
+.table_overflow thead .th_4{
+  width:200px;
+}
+ 
+.table_overflow tbody tr td:nth-child(4){
+  width:200px;
+}
+ 
+/* -- OVERFLOW SCROLL END -- */
+ 
+ 
+ 
+.table_overflow tr td, .table_overflow tr th{ 
+  padding-top:10px;
+  padding-bottom:10px;
+  text-align:left;
+  padding-left:9px;
+}
+ 
+.table_overflow tr th{ font-size:15px; text-align:left;}
+ 
+.table_overflow thead tr td{
+  text-align:center;
+}
+.table_overflow tbody tr:nth-of-type(even){
+  background-color:#f9f9f9;
+  border-bottom:#e5e5e5 1px solid;
+}
+ 
+.table_overflow tr td a{
+  color:#5d5d5d;
+  font-weight:bold;
+  text-decoration:none;
+}
+.table_overflow tr td a:hover{
+  color:#2d2d2d;
+}

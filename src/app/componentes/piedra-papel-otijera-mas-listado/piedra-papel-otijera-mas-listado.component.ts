@@ -17,7 +17,7 @@ export class PiedraPapelOtijeraMasListadoComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.filtro.Filtrar('Piedra Papel o Tijera','juegos').subscribe(datos=>{this.listadoParaCompartir = datos });
+    this.filtro.Filtrar('Piedra Papel O Tijera','juegos').subscribe(datos=>{this.listadoParaCompartir = datos });
     
   } 
   capturaJuego(juego:Juego){

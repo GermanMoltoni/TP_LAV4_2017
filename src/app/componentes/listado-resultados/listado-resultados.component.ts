@@ -8,10 +8,10 @@ import {MatTableDataSource} from '@angular/material';
   styleUrls: ['./listado-resultados.component.css']
 })
 export class ListadoResultadosComponent implements OnInit {
-  @Input() public listado;// Pasa info de un componente a otro.
-  displayedColumns = ['usuario', 'gano', 'fecha'];
+  @Input() public listado   ;// Pasa info de un componente a otro.
+ 
   
-  public dataSource = new MatTableDataSource<Juego>(this.listado);
+    
   
   constructor() { }
   public puntaje:boolean=true;

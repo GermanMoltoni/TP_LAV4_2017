@@ -14,7 +14,6 @@
             <div class="col-md-4 col-xs-4 col-sm-4 "  >
                 <input  class="form-control"   placeholder="Respuesta" type="text" [(ngModel)]='palabra'/>
             </div>
-
         </div>
     </div>
     <div class="row">
@@ -22,20 +21,20 @@
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <h4 class="text-center" [hidden]="!juego.gano">Ganaste!!!</h4>
             </div>
-            
         </div>
     <div class="row">&nbsp;</div>
-    
     <div class="row">
         <div class="col-md-4 col-sm-4 "></div>
         <div class="col-md-4 col-xs-12 col-sm-4"  >
-                <mat-chip-list >
-                        
-                                  <mat-chip color="primary" selected=true (click)='GenerarNuevo()' >Nuevo&nbsp;</mat-chip>
-                                  <mat-chip color="accent"   selected=true (click)='Verificar()'>Verificar</mat-chip>
-                                </mat-chip-list>
-        </div>
-           
-    </div>       
+            <mat-chip-list >
+                <mat-chip color="primary" selected=true (click)='GenerarNuevo()' >Nuevo&nbsp;</mat-chip>
+                <mat-chip color="accent"   selected=true (click)='Verificar()'>Verificar</mat-chip>
+            </mat-chip-list>
+        </div>     
+    </div>   
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <h4 class="text-center"><strong>Descifrá la palabra oculta!</strong></h4>    
+    </div>      
 </div>      
 

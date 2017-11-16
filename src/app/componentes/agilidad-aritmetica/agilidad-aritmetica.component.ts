@@ -39,14 +39,11 @@ export class AgilidadAritmeticaComponent implements OnInit {
   public jugador:Jugador;
   public tiempoMaximo;
   public tiempo=60;
-  public turnoJugador: boolean;
-  public tiempoInicio: Date;
+   public tiempoInicio: Date;
   public tiempoUltimoJug;
-  public mensaje:boolean=true;
-  public alertaGano:boolean=false;
+   public alertaGano:boolean=false;
   public alertaPerdio:boolean=false;
-  public resultado:boolean=true;
-    @Output() enviarJuego:EventEmitter<Juego> =new EventEmitter<Juego>();
+     @Output() enviarJuego:EventEmitter<Juego> =new EventEmitter<Juego>();
   public state;
   constructor() { 
     this.jugador = Jugador.getJugador();
@@ -89,8 +86,10 @@ export class AgilidadAritmeticaComponent implements OnInit {
       if(this.juego.gano){
         this.alertaGano=true;
       }
-      else
+      else{
         this.alertaPerdio=true;
+      }
+   
       this.enviarJuego.emit(this.juego);
       this.juego.estado=false;
       return;
