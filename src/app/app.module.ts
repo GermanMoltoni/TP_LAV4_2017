@@ -20,7 +20,7 @@ import { RutasModule } from './modulos/rutas/rutas.module';
 import {HttpModule} from '@angular/http';
 import { RouterModule,Routes }   from '@angular/router';//rutas
 import { FormsModule,ReactiveFormsModule}   from '@angular/forms';
-import {MatCardModule,MatSelectModule,MatInputModule,MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule} from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatMenuModule} from '@angular/material/menu';
@@ -99,7 +99,7 @@ import { AnagramaMasListadoComponent } from './componentes/anagrama-mas-listado/
   ],
   imports: [
     BrowserModule,Ng2SmartTableModule,FormsModule,RutasModule,ReactiveFormsModule,HttpModule,BrowserAnimationsModule,
-    MatCardModule,MatSelectModule,MatInputModule,MatButtonModule, MatCheckboxModule,MatTableModule,MatChipsModule,MatMenuModule,MatRadioModule
+    MatButtonModule,MatTableModule,MatChipsModule,MatMenuModule,MatRadioModule
   ],
   providers: [MiHttpService,JugadorService,FiltrarJuegosService,JuegoService],
   bootstrap: [AppComponent],
