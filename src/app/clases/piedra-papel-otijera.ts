@@ -12,9 +12,13 @@ export class PiedraPapelOTijera  extends Juego{
         this.maquina = Math.floor(Math.random() * 3) + 1;
     }
     Verificar(){
-        this.gano = (this.opcion ==  1 && this.maquina == 3) ||
-                    (this.opcion == 3 && this.maquina == 1) || 
-                    (this.opcion ==  3 && this.maquina == 2);
+        if((this.opcion ==  1 && this.maquina == 3) ||(this.opcion == 2 && this.maquina == 1) || (this.opcion ==  3 && this.maquina == 2)){
+            this.gano = true;
+        }
+        else if(this.opcion ==   this.maquina)
+            this.gano= null;
+        else
+            this.gano = false;
         this.fecha = (new Date()).toLocaleDateString("es");
     }
     ToObj(){
@@ -22,7 +26,8 @@ export class PiedraPapelOTijera  extends Juego{
             jugador:this.jugador.toObj(),
             nombre:this.nombre,
             gano:this.gano,
-            puntaje:null
+            puntaje:null,
+            fecha:this.fecha
         }
     }
 }

@@ -11,6 +11,9 @@ import {Jugador} from '../../clases/jugador';
 export class PiedraPapelOtijeraComponent implements OnInit {
   public juego:PiedraPapelOTijera;
   public jugador:Jugador;
+  public alertaEmpate = false;
+  public alertaPerdio = false;
+  public alertaGano = false;
   @Output() enviarJuego:EventEmitter<Juego> =new EventEmitter<Juego>();
   public img = './assets/interrogacion.jpg';
   constructor() { 
@@ -21,6 +24,7 @@ export class PiedraPapelOtijeraComponent implements OnInit {
   }
 
   Jugar(opcion:string){
+
     this.jugador = Jugador.getJugador();
     if(this.jugador != null){
     this.juego = new PiedraPapelOTijera('Piedra Papel O Tijera',this.jugador);
@@ -53,6 +57,20 @@ export class PiedraPapelOtijeraComponent implements OnInit {
       this.img='./assets/tijera.jpg';
         break;
     }
-    this.enviarJuego.emit(this.juego);
+    if(this.juego.gano == null)
+      this.alertaEmpate = true;
+    else if(this.juego.gano){
+      this.alertaGano = true;
+      this.enviarJuego.emit(this.juego); 
+    }
+    else{
+      this.alertaPerdio = true;
+      this.enviarJuego.emit(this.juego);
+    }
+     setTimeout(() => {
+      this.alertaEmpate=false;
+      this.alertaPerdio=false;
+      this.alertaGano=false;
+     }, 1000); 
   }
 }
